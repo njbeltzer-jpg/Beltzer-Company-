@@ -16,15 +16,18 @@
         .btn { padding: 18px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 1.1rem; color: white; transition: 0.3s; min-width: 220px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .btn-email { background: var(--primary); }
         .btn-text { background: var(--accent); }
-        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
         section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
         .card-bg { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 40px; }
         h2 { color: var(--primary); font-size: 2rem; border-left: 6px solid var(--accent); padding-left: 20px; margin-bottom: 30px; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .grid-item { background: var(--light); padding: 25px; border-radius: 8px; border-top: 4px solid var(--primary); }
-        .grid-item h3 { margin-top: 0; color: var(--primary); }
+        .grid-item { background: var(--light); padding: 25px; border-radius: 8px; }
+        .grid-item h3 { margin-top: 0; color: var(--primary); font-size: 1.2rem; }
+
+        .methodology-list { list-style: none; padding: 0; }
+        .methodology-list li { margin-bottom: 15px; padding-left: 30px; position: relative; }
+        .methodology-list li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
 
         form { display: grid; gap: 15px; }
         input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; }
@@ -40,7 +43,7 @@
 
 <header>
     <h1>The Beltzer Company</h1>
-    <p class="tagline">Owner-Operated | 20 Years of High-End Trade Experience</p>
+    <p class="tagline">20 Years of Trade Expertise | Omaha & Gretna</p>
 </header>
 
 <div class="cta-container">
@@ -49,25 +52,58 @@
 </div>
 
 <section class="card-bg">
-    <h2>Professional Standards</h2>
+    <h2>Meet the Owner</h2>
+    <p>I began my career in the Omaha trades in 2005, working my way up from apprentice to Foreman of a top-tier painting firm before launching <strong>The Beltzer Company</strong> in 2020. This background gives me a unique understanding of job site management and the precision required for high-end custom homes. When you hire me, you aren't just getting a crew; you are getting 20 years of hands-on leadership and technical skill.</p>
+</section>
+
+<section class="card-bg">
+    <h2>The Methodology</h2>
     <div class="grid">
         <div class="grid-item">
-            <h3>Fully Insured</h3>
-            <p>Complete liability coverage for high-end residential job sites. We prioritize safety and site protection.</p>
+            <h3>Technical Precision</h3>
+            <ul class="methodology-list">
+                <li>Custom stain matching across diverse wood species.</li>
+                <li>Physical sample approval before any production begins.</li>
+                <li>HEPA-filtered dust containment for interior finishes.</li>
+            </ul>
         </div>
         <div class="grid-item">
-            <h3>Custom Stain Matching</h3>
-            <p>Specialized expertise in matching architectural woodwork across diverse species. Physical samples provided for approval.</p>
-        </div>
-        <div class="grid-item">
-            <h3>The No-Deviation Promise</h3>
-            <p>Straightforward project management. The plan we start with is the plan I finish with—no mid-project surprises.</p>
+            <h3>Professional Standards</h3>
+            <ul class="methodology-list">
+                <li>Fully Insured & Bonded for residential job sites.</li>
+                <li>Consistent timelines: we hit our start and finish dates.</li>
+                <li>Direct owner-operator communication on every project.</li>
+            </ul>
         </div>
     </div>
 </section>
 
 <section class="card-bg">
     <h2>Request a Bid</h2>
-    <p>Submit your project details below. As an owner-operator, I personally review and bid every job.</p>
     <form action="mailto:Njbeltzer@gmail.com" method="post" enctype="text/plain">
-        <input type="text" name="Name" placeholder="Your Name / Company" required>
+        <input type="text" name="Name" placeholder="Name / Builder Company" required>
+        <input type="text" name="Location" placeholder="Project Location (Omaha, Gretna, etc.)" required>
+        <select name="Project-Type">
+            <option value="New-Construction">New Construction</option>
+            <option value="Remodel">Custom Remodel / Specialty Finish</option>
+        </select>
+        <textarea name="Details" rows="4" placeholder="Briefly describe the project..."></textarea>
+        <button type="submit" class="submit-btn">Submit Bid Request</button>
+    </form>
+</section>
+
+<section>
+    <h2 style="border-left: 6px solid var(--primary); padding-left: 20px;">Featured Work</h2>
+    <div class="gallery">
+        <div class="project-card"><img src="Images/20240805_175157.jpg" alt="Interior Finish"></div>
+        <div class="project-card"><img src="Images/20240805_194448.jpg" alt="Stain Matching"></div>
+        <div class="project-card"><img src="Images/20240805_194504.jpg" alt="T&G Ceiling"></div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 The Beltzer Company | 402-215-7756 | Gretna, NE</p>
+</footer>
+
+</body>
+</html>
