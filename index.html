@@ -3,125 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Beltzer Company | Painting & Custom Sawmilling Gretna</title>
-    <meta name="description" content="20 years of trade experience in professional painting and custom sawmilling. Serving Gretna, Omaha, and Lincoln.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>The Beltzer Company | High-End Painting & Finishing</title>
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 40px 0; background: #f4f4f4; margin-bottom: 20px; }
+        h1 { margin: 0; color: #2c3e50; }
+        .intro { text-align: center; margin-bottom: 40px; }
+        
+        /* Gallery Styling */
+        .gallery { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
+        }
+        .project-card { 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .project-card img { 
+            width: 100%; 
+            height: 250px; 
+            object-fit: cover; 
+            display: block;
+        }
+        .project-info { padding: 15px; }
+        .project-info h3 { margin: 0 0 10px 0; font-size: 1.2rem; }
+        
+        footer { text-align: center; margin-top: 50px; padding: 20px; color: #777; }
     </style>
 </head>
-<body class="bg-gray-50 text-slate-900">
+<body>
 
-    <header class="relative hero-gradient py-24 md:py-32 px-4 overflow-hidden border-b-4 border-blue-600">
-        <div class="absolute top-0 left-0 w-full h-full opacity-10">
-            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-        </div>
-        <div class="relative max-w-5xl mx-auto text-center">
-            <span class="inline-block px-4 py-1 mb-6 text-xs font-bold tracking-widest text-blue-400 uppercase bg-blue-900/40 rounded-full border border-blue-500/30">
-                20 Years of Trade Excellence
-            </span>
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6">
-                The <span class="text-blue-500">Beltzer</span> Company
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-                From the <span class="text-white font-semibold">Sawmill</span> to the <span class="text-white font-semibold">Finish Coat</span>. Premium painting and custom lumber for Nebraska homeowners.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#contact" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition duration-300 shadow-lg">
-                    Request an Estimate
-                </a>
-                <a href="tel:+14020000000" class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-lg backdrop-blur-sm transition duration-300 border border-white/20">
-                    Call Today
-                </a>
-            </div>
-        </div>
-    </header>
+<header>
+    <h1>The Beltzer Company</h1>
+    <p>20 Years of Precision Painting & Custom Finishing</p>
+</header>
 
-    <section class="bg-white py-10 border-b">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div>
-                    <h3 class="text-blue-600 text-3xl font-extrabold">20+</h3>
-                    <p class="text-gray-500 uppercase tracking-wide text-sm font-bold">Years Experience</p>
-                </div>
-                <div>
-                    <h3 class="text-blue-600 text-3xl font-extrabold">Local</h3>
-                    <p class="text-gray-500 uppercase tracking-wide text-sm font-bold">Gretna Based</p>
-                </div>
-                <div>
-                    <h3 class="text-blue-600 text-3xl font-extrabold">Dual</h3>
-                    <p class="text-gray-500 uppercase tracking-wide text-sm font-bold">Milling & Painting</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="intro">
+    <h2>Project Gallery</h2>
+    <p>Specializing in custom stain matching and high-end residential finishes in Omaha, Gretna, and Lincoln.</p>
+</section>
 
-    <section class="max-w-6xl mx-auto py-20 px-4">
-        <div class="grid md:grid-cols-2 gap-12">
-            <div class="bg-white p-10 shadow-xl rounded-2xl border-l-8 border-blue-500">
-                <h2 class="text-3xl font-bold mb-4">Professional Painting</h2>
-                <p class="text-gray-600 mb-6 leading-relaxed">High-end interior and exterior painting. We specialize in meticulous prep work and a finish that transforms your home. Built on 15 years in the painting industry.</p>
-                <ul class="text-sm text-gray-500 space-y-2">
-                    <li>✓ Interior & Exterior</li>
-                    <li>✓ Residential & Commercial</li>
-                    <li>✓ Precision Cabinet Refinishing</li>
-                </ul>
-            </div>
-            <div class="bg-white p-10 shadow-xl rounded-2xl border-l-8 border-green-600">
-                <h2 class="text-3xl font-bold mb-4">Custom Sawmilling</h2>
-                <p class="text-gray-600 mb-6 leading-relaxed">Transforming local logs into premium, usable lumber. Whether it's live-edge slabs or dimensional wood, we provide expert milling for your custom projects.</p>
-                <ul class="text-sm text-gray-500 space-y-2">
-                    <li>✓ Mobile Sawmilling</li>
-                    <li>✓ Custom Slabs & Lumber</li>
-                    <li>✓ Wood Reclamation</li>
-                </ul>
-            </div>
+<div class="gallery">
+    <div class="project-card">
+        <img src="Images/20240805_175157.jpg" alt="High-end painting finish">
+        <div class="project-info">
+            <h3>Custom Interior Finish</h3>
+            <p>Methodical preparation and precision application for a flawless surface.</p>
         </div>
-    </section>
+    </div>
 
-    <section class="bg-slate-100 py-20">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold">Proudly Serving Eastern Nebraska</h2>
-                <p class="text-gray-600 mt-2">Mobile service available to your job site or home.</p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="p-4 bg-white rounded-lg shadow-sm text-center font-bold">Gretna</div>
-                <div class="p-4 bg-white rounded-lg shadow-sm text-center font-bold">Omaha</div>
-                <div class="p-4 bg-white rounded-lg shadow-sm text-center font-bold">Lincoln</div>
-                <div class="p-4 bg-white rounded-lg shadow-sm text-center font-bold">Sarpy County</div>
-                <div class="p-4 bg-white rounded-lg shadow-sm text-center font-bold">Papillion</div>
-                <div class="p-4 bg-white rounded-lg shadow-sm text-center font-bold">Elkhorn</div>
-                <div class="p-4 bg-white rounded-lg shadow-sm text-center font-bold">Bennington</div>
-                <div class="p-4 bg-white rounded-lg shadow-sm text-center font-bold">Waverly</div>
-            </div>
+    <div class="project-card">
+        <img src="Images/20240805_194448.jpg" alt="Stain matching project">
+        <div class="project-info">
+            <h3>Expert Stain Matching</h3>
+            <p>Ensuring consistency across various wood species and architectural elements.</p>
         </div>
-    </section>
+    </div>
 
-    <footer id="contact" class="bg-slate-900 text-white py-24 text-center">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-4">Ready to Start?</h2>
-            <p class="mb-12 text-gray-400 text-lg">Contact Nick Beltzer for a free estimate on your next project.</p>
-            
-            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
-                <a href="sms:+14022157756" 
-                   class="w-full md:w-auto bg-green-600 hover:bg-green-700 text-white font-extrabold py-5 px-12 rounded-xl transition duration-300 shadow-2xl text-xl">
-                   Text Us Now
-                </a>
-                <a href="mailto:njbeltzer@gmail.com" 
-                   class="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white font-extrabold py-5 px-12 rounded-xl transition duration-300 shadow-2xl text-xl">
-                   Email Nick
-                </a>
-            </div>
-
-            <div class="mt-20 pt-8 border-t border-slate-800">
-                <p class="text-gray-500 font-bold uppercase tracking-widest text-sm">The Beltzer Company</p>
-                <p class="text-xs text-gray-600 mt-2">© 2026 | Professional Painting & Sawmilling | Gretna, Nebraska</p>
-            </div>
+    <div class="project-card">
+        <img src="Images/20240805_194504.jpg" alt="Tongue and Groove detail">
+        <div class="project-info">
+            <h3>Detailed Wood Finishing</h3>
+            <p>Specializing in challenging overhead surfaces like T&G ceilings.</p>
         </div>
-    </footer>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 The Beltzer Company | Nick Beltzer | Gretna, NE</p>
+</footer>
 
 </body>
 </html>
