@@ -3,106 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Beltzer Company | Precision Painting & Finishing</title>
+    <title>The Beltzer Company | Fine Finishing</title>
     <style>
-        :root { --primary: #2c3e50; --accent: #27ae60; --text: #333; --light: #f4f4f4; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: var(--text); max-width: 1200px; margin: 0 auto; padding: 0; background: #fafafa; }
+        :root { --primary: #1a252f; --gold: #b08d57; --text: #2c3e50; --bg: #fdfdfd; }
         
-        header { text-align: center; padding: 80px 20px; background: white; border-bottom: 4px solid var(--primary); }
-        h1 { margin: 0; font-size: 2.8rem; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; }
-        .tagline { font-size: 1.3rem; color: #666; margin-top: 10px; font-weight: 300; }
+        body { 
+            font-family: 'Garamond', 'Georgia', serif; 
+            color: var(--text); 
+            margin: 0; 
+            background-color: var(--bg);
+            /* Subtle paint brush texture background */
+            background-image: url('https://www.transparenttextures.com/patterns/gplay.png');
+        }
 
-        .cta-container { display: flex; justify-content: center; gap: 15px; padding: 40px 20px; flex-wrap: wrap; background: white; }
-        .btn { padding: 18px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 1.1rem; color: white; transition: 0.3s; min-width: 220px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .btn-email { background: var(--primary); }
-        .btn-text { background: var(--accent); }
+        header { 
+            text-align: center; 
+            padding: 100px 20px; 
+            background: rgba(255,255,255,0.9);
+            border-bottom: 1px solid #eee;
+        }
 
-        section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
-        .card-bg { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 40px; }
-        h2 { color: var(--primary); font-size: 2rem; border-left: 6px solid var(--accent); padding-left: 20px; margin-bottom: 30px; }
+        h1 { font-weight: 400; font-size: 3.5rem; letter-spacing: 5px; margin: 0; color: var(--primary); }
+        .tagline { font-style: italic; font-size: 1.1rem; color: var(--gold); margin-top: 10px; letter-spacing: 1px; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .grid-item { background: var(--light); padding: 25px; border-radius: 8px; }
-        .grid-item h3 { margin-top: 0; color: var(--primary); font-size: 1.2rem; }
+        .cta-group { display: flex; justify-content: center; gap: 20px; padding: 40px; flex-wrap: wrap; }
+        .btn { 
+            padding: 15px 40px; 
+            text-decoration: none; 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+            letter-spacing: 2px; 
+            transition: 0.4s;
+            border: 1px solid var(--primary);
+        }
+        .btn-dark { background: var(--primary); color: white; }
+        .btn-outline { color: var(--primary); }
+        .btn:hover { background: var(--gold); color: white; border-color: var(--gold); }
 
-        .methodology-list { list-style: none; padding: 0; }
-        .methodology-list li { margin-bottom: 15px; padding-left: 30px; position: relative; }
-        .methodology-list li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        section { max-width: 1100px; margin: 80px auto; padding: 0 20px; }
+        h2 { font-weight: 400; font-size: 2.2rem; text-align: center; margin-bottom: 50px; position: relative; }
+        h2::after { content: ''; display: block; width: 50px; height: 1px; background: var(--gold); margin: 20px auto; }
 
-        form { display: grid; gap: 15px; }
-        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; }
-        .submit-btn { background: var(--primary); color: white; border: none; padding: 15px; cursor: pointer; font-weight: bold; border-radius: 5px; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .method-item { margin-bottom: 30px; border-left: 2px solid var(--gold); padding-left: 20px; }
 
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
-        .project-card img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; }
+        /* Elegant Gallery */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 10px; }
+        .gallery img { 
+            width: 100%; 
+            height: 400px; 
+            object-fit: cover; 
+            filter: grayscale(20%); 
+            transition: 0.5s; 
+            cursor: pointer;
+        }
+        .gallery img:hover { filter: grayscale(0%); transform: scale(1.02); }
 
-        footer { text-align: center; padding: 60px; color: #999; border-top: 1px solid #eee; }
+        footer { text-align: center; padding: 100px 20px; background: var(--primary); color: #999; letter-spacing: 2px; font-size: 0.7rem; }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>The Beltzer Company</h1>
-    <p class="tagline">20 Years of Trade Expertise | Omaha & Gretna</p>
+    <h1>THE BELTZER COMPANY</h1>
+    <p class="tagline">FINE INTERIOR & EXTERIOR FINISHING | EST. 2005</p>
 </header>
 
-<div class="cta-container">
-    <a href="mailto:Njbeltzer@gmail.com?subject=Project Inquiry" class="btn btn-email">📧 Request a Quote</a>
-    <a href="sms:+14022157756" class="btn btn-text">💬 Text Nick Directly</a>
+<div class="cta-group">
+    <a href="mailto:Njbeltzer@gmail.com" class="btn btn-dark">Request a Consultation</a>
+    <a href="sms:+14022157756" class="btn btn-outline">Text Nick Directly</a>
 </div>
 
-<section class="card-bg">
-    <h2>Meet the Owner</h2>
-    <p>I began my career in the Omaha trades in 2005, working my way up from apprentice to Foreman of a top-tier painting firm before launching <strong>The Beltzer Company</strong> in 2020. This background gives me a unique understanding of job site management and the precision required for high-end custom homes. When you hire me, you aren't just getting a crew; you are getting 20 years of hands-on leadership and technical skill.</p>
-</section>
-
-<section class="card-bg">
-    <h2>The Methodology</h2>
-    <div class="grid">
-        <div class="grid-item">
-            <h3>Technical Precision</h3>
-            <ul class="methodology-list">
-                <li>Custom stain matching across diverse wood species.</li>
-                <li>Physical sample approval before any production begins.</li>
-                <li>HEPA-filtered dust containment for interior finishes.</li>
-            </ul>
+<section class="about-grid">
+    <div>
+        <h2>The Heritage</h2>
+        <p>With a career spanning two decades in the Omaha trades, Nick Beltzer brings a foreman's eye for detail to every project. Launched in 2020, The Beltzer Company specializes in the precise finishing required for high-end custom builds.</p>
+    </div>
+    <div>
+        <div class="method-item">
+            <strong>Custom Stain Alchemy</strong>
+            <p>Seamless matching across disparate wood species to ensure architectural continuity.</p>
         </div>
-        <div class="grid-item">
-            <h3>Professional Standards</h3>
-            <ul class="methodology-list">
-                <li>Fully Insured & Bonded for residential job sites.</li>
-                <li>Consistent timelines: we hit our start and finish dates.</li>
-                <li>Direct owner-operator communication on every project.</li>
-            </ul>
+        <div class="method-item">
+            <strong>Clean Site Standards</strong>
+            <p>HEPA-filtered containment and meticulous masking to protect the integrity of the build.</p>
         </div>
     </div>
 </section>
 
-<section class="card-bg">
-    <h2>Request a Bid</h2>
-    <form action="mailto:Njbeltzer@gmail.com" method="post" enctype="text/plain">
-        <input type="text" name="Name" placeholder="Name / Builder Company" required>
-        <input type="text" name="Location" placeholder="Project Location (Omaha, Gretna, etc.)" required>
-        <select name="Project-Type">
-            <option value="New-Construction">New Construction</option>
-            <option value="Remodel">Custom Remodel / Specialty Finish</option>
-        </select>
-        <textarea name="Details" rows="4" placeholder="Briefly describe the project..."></textarea>
-        <button type="submit" class="submit-btn">Submit Bid Request</button>
-    </form>
-</section>
-
 <section>
-    <h2 style="border-left: 6px solid var(--primary); padding-left: 20px;">Featured Work</h2>
+    <h2>Project Portfolio</h2>
     <div class="gallery">
-        <div class="project-card"><img src="Images/20240805_175157.jpg" alt="Interior Finish"></div>
-        <div class="project-card"><img src="Images/20240805_194448.jpg" alt="Stain Matching"></div>
-        <div class="project-card"><img src="Images/20240805_194504.jpg" alt="T&G Ceiling"></div>
+        <img src="Images/20240805_175157.jpg" alt="Work 1">
+        <img src="Images/20240805_194448.jpg" alt="Work 2">
+        <img src="Images/20240805_194504.jpg" alt="Work 3">
+        <img src="Images/20240807_112146.jpg" alt="Work 4">
+        <img src="Images/20240910_175457.jpg" alt="Work 5">
+        <img src="Images/20240910_190813.jpg" alt="Work 6">
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 The Beltzer Company | 402-215-7756 | Gretna, NE</p>
+    <p>THE BELTZER COMPANY &copy; 2026 | GRETNA, NEBRASKA | 402.215.7756</p>
 </footer>
 
 </body>
