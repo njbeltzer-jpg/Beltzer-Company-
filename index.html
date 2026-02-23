@@ -34,6 +34,7 @@
             letter-spacing: 2px; 
             transition: 0.4s;
             border: 1px solid var(--primary);
+            cursor: pointer;
         }
         .btn-dark { background: var(--primary); color: white; }
         .btn-outline { color: var(--primary); }
@@ -48,6 +49,19 @@
         .service-card { background: white; padding: 40px; border: 1px solid #eee; transition: 0.3s; }
         .service-card:hover { border-color: var(--gold); transform: translateY(-5px); }
         .service-card h3 { font-weight: 400; font-size: 1.4rem; color: var(--primary); margin-top: 0; border-bottom: 1px solid var(--gold); padding-bottom: 10px; }
+
+        /* Legacy & Process Section */
+        .legacy-container { background: white; border: 1px solid #eee; padding: 60px; display: flex; align-items: center; gap: 50px; margin-bottom: 50px; }
+        .legacy-text { flex: 2; }
+        .legacy-text h2 { text-align: left; margin-top: 0; }
+        .legacy-text h2::after { margin: 25px 0; }
+        .legacy-years { flex: 1; text-align: center; border-left: 1px solid var(--gold); padding-left: 20px; }
+        .year-number { font-size: 5rem; color: var(--gold); display: block; line-height: 1; }
+        .year-label { text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: var(--primary); }
+
+        .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; margin-top: 30px; }
+        .step-num { font-family: 'serif'; font-style: italic; color: var(--gold); font-size: 1.5rem; margin-bottom: 10px; display: block; }
+        .process-grid h4 { letter-spacing: 1px; text-transform: uppercase; font-weight: 400; color: var(--primary); }
 
         /* Elegant Gallery */
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 15px; }
@@ -65,7 +79,11 @@
 
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
-            .service-grid { grid-template-columns: 1fr; }
+            .service-grid, .process-grid { grid-template-columns: 1fr; }
+            .legacy-container { flex-direction: column; padding: 30px; text-align: center; }
+            .legacy-text h2 { text-align: center; }
+            .legacy-text h2::after { margin: 25px auto; }
+            .legacy-years { border-left: none; border-top: 1px solid var(--gold); padding-top: 20px; padding-left: 0; }
         }
     </style>
 </head>
@@ -100,20 +118,39 @@
 </section>
 
 <section>
+    <div class="legacy-container">
+        <div class="legacy-text">
+            <h2>The Owner-Operator Edge</h2>
+            <p>At The Beltzer Company, we don't just apply coatings; we understand the substrate. With a deep background in sawmilling and woodworking, we bring an unparalleled understanding of how wood, humidity, and finish interact. When you hire us, you aren't getting a revolving door of subcontractors—you're getting two decades of hands-on mastery.</p>
+        </div>
+        <div class="legacy-years">
+            <span class="year-number">20</span>
+            <span class="year-label">Years in the Trades</span>
+        </div>
+    </div>
+
+    <div class="process-grid">
+        <div>
+            <span class="step-num">01.</span>
+            <h4>Sourcing & Prep</h4>
+            <p style="font-size: 0.9rem; line-height: 1.6;">Whether it's raw timber or a drywall surface, the finish is only as good as the foundation. We prioritize rigorous preparation.</p>
+        </div>
+        <div>
+            <span class="step-num">02.</span>
+            <h4>Precision Application</h4>
+            <p style="font-size: 0.9rem; line-height: 1.6;">Using commercial-grade equipment and architectural-standard coatings for a lifetime seal and flawless aesthetics.</p>
+        </div>
+        <div>
+            <span class="step-num">03.</span>
+            <h4>The Master's Finish</h4>
+            <p style="font-size: 0.9rem; line-height: 1.6;">Final inspection and detailing that meets the rigorous standards of Nebraska's finest custom builds.</p>
+        </div>
+    </div>
+</section>
+
+<section>
     <h2>Recent Portfolio</h2>
     <div class="gallery">
         <img src="Images/20240805_175157.jpg" alt="Interior Finish">
         <img src="Images/20240805_194448.jpg" alt="Stain Matching">
-        <img src="Images/20240805_194504.jpg" alt="T&G Ceiling Detail">
-        <img src="Images/20240807_112146.jpg" alt="High-End Repaint">
-        <img src="Images/20240910_175457.jpg" alt="Commercial Standard">
-        <img src="Images/20240910_190813.jpg" alt="Exterior Wood Finish">
-    </div>
-</section>
-
-<footer>
-    <p>THE BELTZER COMPANY &copy; 2026 | GRETNA, NEBRASKA | 402.215.7756</p>
-</footer>
-
-</body>
-</html>
+        <img src="Images/20240805_1945
