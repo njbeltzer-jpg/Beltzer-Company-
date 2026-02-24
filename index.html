@@ -80,4 +80,130 @@
         .footer-copy { color: #555; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; border-top: 1px solid #2c3e50; padding-top: 40px; }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.2
+            h1 { font-size: 2.2rem; }
+            .legacy-container { flex-direction: column; padding: 30px; text-align: center; }
+            .legacy-text h2 { text-align: center; }
+            .legacy-text h2::after { margin: 25px auto; }
+            .legacy-years { border-left: none; border-top: 1px solid var(--gold); padding-top: 20px; }
+        }
+    </style>
+</head>
+<body id="top">
+
+<header>
+    <h1>THE BELTZER COMPANY</h1>
+    <p class="tagline">ARCHITECTURAL COATINGS & FINE FINISHING | EST. 2005</p>
+</header>
+
+<div class="cta-group">
+    <a href="mailto:Njbeltzer@gmail.com" class="btn btn-dark">Inquire for Bid</a>
+    <a href="sms:+14022157756" class="btn btn-outline">Text Nick Directly</a>
+</div>
+
+<section>
+    <h2>Core Expertise</h2>
+    <div class="service-grid">
+        <div class="service-card">
+            <h3>Residential New Build</h3>
+            <p>Interior and exterior finishing for custom luxury homes. Specializing in high-stakes T&G ceilings and millwork.</p>
+        </div>
+        <div class="service-card">
+            <h3>Commercial New Build</h3>
+            <p>Reliable finishing for new commercial developments. Scalable methodology with foreman-level oversight.</p>
+        </div>
+        <div class="service-card">
+            <h3>Existing Repaints</h3>
+            <p>High-end restoration and repaints for established residential and commercial properties in Omaha and Gretna.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="legacy-container">
+        <div class="legacy-text">
+            <h2>The Owner-Operator Edge</h2>
+            <p>At The Beltzer Company, we don't just apply coatings; we understand the substrate. With a deep background in sawmilling and woodworking, we bring an unparalleled understanding of how wood, humidity, and finish interact. When you hire us, you aren't getting a revolving door of subcontractors—you're getting two decades of hands-on mastery.</p>
+        </div>
+        <div class="legacy-years">
+            <span class="year-number">20</span>
+            <span class="year-label">Years in the Trades</span>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Recent Portfolio</h2>
+    <div class="gallery" id="project-gallery">
+        <img src="Images/20240910_175504.jpg" alt="Commercial Finishing">
+        <img src="Images/20240523_133612.jpg" alt="Exterior Coating">
+        <img src="Images/20240522_142341.jpg" alt="Custom Interior">
+        <img src="Images/20240516_123104.jpg" alt="Fine Woodwork">
+        <img src="Images/20240516_093433.jpg" alt="Trim Precision">
+        <img src="Images/20240509_131810.jpg" alt="Cabinetry Refinishing">
+        <img src="Images/20240509_105718.jpg" alt="Millwork Detail">
+        <img src="Images/20240509_105712.jpg" alt="Surface Prep">
+        <img src="Images/20240509_095405.jpg" alt="Residential Build">
+        <img src="Images/20240416_101433.jpg" alt="T&G Ceiling">
+        <img src="Images/20240805_175157.jpg" alt="Interior Finish">
+        <img src="Images/20240805_194448.jpg" alt="Stain Matching">
+        <img src="Images/20240805_194504.jpg" alt="Ceiling Detail">
+        <img src="Images/20240807_112146.jpg" alt="High-End Repaint">
+        <img src="Images/20240910_175457.jpg" alt="Commercial Standard">
+        <img src="Images/20240910_190813.jpg" alt="Exterior Wood">
+    </div>
+    
+    <div class="load-more-container">
+        <button id="loadMoreBtn" class="btn btn-outline">Load More Projects</button>
+    </div>
+</section>
+
+<div class="service-area">
+    <h2>Project Locations</h2>
+    <div class="location-grid">
+        <div class="location-col">
+            <h4>Sarpy County</h4>
+            <p>Gretna (HQ)<br>Papillion<br>La Vista</p>
+        </div>
+        <div class="location-col">
+            <h4>Omaha Metro</h4>
+            <p>Elkhorn<br>Bennington<br>West Omaha</p>
+        </div>
+        <div class="location-col">
+            <h4>Regional</h4>
+            <p>Lincoln<br>Ashland<br>Fremont</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-logo">THE BELTZER COMPANY</div>
+    <div class="footer-sub">Fine Finishing & Architectural Coatings | Established 2005</div>
+    <div class="footer-copy">
+        &copy; 2026 THE BELTZER COMPANY. ALL RIGHTS RESERVED.
+    </div>
+</footer>
+
+<script>
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    let currentCount = 6;
+
+    function showImages() {
+        for (let i = 0; i < currentCount && i < galleryImages.length; i++) {
+            galleryImages[i].style.display = 'block';
+        }
+        if (currentCount >= galleryImages.length) {
+            loadMoreBtn.style.display = 'none';
+        }
+    }
+
+    loadMoreBtn.addEventListener('click', () => {
+        currentCount += 6;
+        showImages();
+    });
+
+    showImages();
+</script>
+
+</body>
+</html>
