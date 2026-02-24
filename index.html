@@ -46,17 +46,14 @@
         h2 { font-weight: 400; font-size: 2.2rem; text-align: center; margin-bottom: 50px; position: relative; letter-spacing: 2px; }
         h2::after { content: ''; display: block; width: 60px; height: 1px; background: var(--gold); margin: 25px auto; }
 
-        /* Service Cards */
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
         .service-card { background: white; padding: 40px; border: 1px solid #eee; transition: 0.3s; }
         .service-card:hover { border-color: var(--gold); transform: translateY(-5px); }
         .service-card h3 { font-weight: 400; font-size: 1.4rem; color: var(--primary); margin-top: 0; border-bottom: 1px solid var(--gold); padding-bottom: 10px; }
 
-        /* Specialized List */
         .special-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; }
         .special-item { border-left: 2px solid var(--gold); padding-left: 15px; font-size: 0.95rem; }
 
-        /* Legacy & About Section */
         .legacy-container { background: white; border: 1px solid #eee; padding: 60px; display: flex; align-items: center; gap: 50px; margin-bottom: 50px; }
         .legacy-text { flex: 2; }
         .legacy-text h2 { text-align: left; margin-top: 0; }
@@ -65,188 +62,22 @@
         .year-number { font-size: 5rem; color: var(--gold); display: block; line-height: 1; }
         .year-label { text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: var(--primary); }
 
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 80px; }
-        .about-content h3 { font-weight: 400; font-size: 1.8rem; color: var(--primary); margin-bottom: 20px; }
-        .about-content p { line-height: 1.8; margin-bottom: 20px; font-size: 1.05rem; }
-
-        .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; margin-top: 60px; }
-        .step-num { font-family: 'serif'; font-style: italic; color: var(--gold); font-size: 1.5rem; margin-bottom: 10px; display: block; }
-
-        /* Gallery */
+        /* Gallery and Load More Styling */
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 15px; }
-        .gallery img { width: 100%; height: 450px; object-fit: cover; transition: 0.7s; cursor: pointer; border-radius: 2px; }
+        .gallery img { width: 100%; height: 450px; object-fit: cover; transition: 0.7s; cursor: pointer; border-radius: 2px; display: none; }
         .gallery img:hover { transform: scale(1.03); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
+        .load-more-container { text-align: center; margin-top: 40px; }
 
-        /* Final Contact Section */
-        .final-cta { text-align: center; padding: 80px 20px; background: white; border: 1px solid #eee; margin-top: 50px; }
-        .final-cta h3 { font-weight: 400; font-size: 1.8rem; letter-spacing: 2px; margin-bottom: 10px; }
-        .final-cta p { font-style: italic; color: var(--gold); margin-bottom: 30px; }
-
-        /* Back to Top */
-        .back-to-top { display: block; margin: 40px auto 0; text-decoration: none; color: var(--gold); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
-        .back-to-top:hover { color: var(--primary); letter-spacing: 4px; }
-
-        /* Service Area */
         .service-area { background: rgba(26, 37, 47, 0.03); padding: 80px 20px; text-align: center; border-top: 1px solid #eee; }
         .location-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; margin-top: 30px; }
         .location-col h4 { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 15px; }
         .location-col p { font-size: 0.9rem; line-height: 1.8; color: #555; }
 
-        /* Footer */
         footer { text-align: center; padding: 100px 20px; background: var(--primary); color: #fff; }
         .footer-logo { font-size: 1.5rem; letter-spacing: 4px; margin-bottom: 10px; }
         .footer-sub { color: #888; letter-spacing: 2px; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 30px; }
-        .footer-contact { font-size: 0.9rem; margin-bottom: 40px; color: #ccc; }
         .footer-copy { color: #555; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; border-top: 1px solid #2c3e50; padding-top: 40px; }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            .service-grid, .process-grid, .location-grid, .about-grid { grid-template-columns: 1fr; }
-            .legacy-container { flex-direction: column; padding: 30px; text-align: center; }
-            .legacy-text h2 { text-align: center; }
-            .legacy-text h2::after { margin: 25px auto; }
-            .legacy-years { border-left: none; border-top: 1px solid var(--gold); padding-top: 20px; padding-left: 0; }
-        }
-    </style>
-</head>
-<body id="top">
-
-<header>
-    <h1>THE BELTZER COMPANY</h1>
-    <p class="tagline">ARCHITECTURAL COATINGS & FINE FINISHING | EST. 2005</p>
-</header>
-
-<div class="cta-group">
-    <a href="mailto:Njbeltzer@gmail.com" class="btn btn-dark">Inquire for Bid</a>
-    <a href="sms:+14022157756" class="btn btn-outline">Text Nick Directly</a>
-</div>
-
-<section>
-    <h2>Core Expertise</h2>
-    <div class="service-grid">
-        <div class="service-card">
-            <h3>Residential New Build</h3>
-            <p>Interior and exterior finishing for custom luxury homes. Specializing in high-stakes T&G ceilings and millwork.</p>
-        </div>
-        <div class="service-card">
-            <h3>Commercial New Build</h3>
-            <p>Reliable finishing for new commercial developments. Scalable methodology with foreman-level oversight.</p>
-        </div>
-        <div class="service-card">
-            <h3>Existing Repaints</h3>
-            <p>High-end restoration and repaints for established residential and commercial properties in Omaha and Gretna.</p>
-        </div>
-    </div>
-
-    <div class="special-list">
-        <div class="special-item"><strong>Timber Finishing</strong><br>Slabs, Mantels & Custom Milling</div>
-        <div class="special-item"><strong>Industrial Coatings</strong><br>High-Durability Floor & Wall Seals</div>
-        <div class="special-item"><strong>Cabinetry Refinishing</strong><br>Factory-Grade Spray Application</div>
-        <div class="special-item"><strong>Stain Matching</strong><br>Precision Grain & Tone Calibration</div>
-    </div>
-</section>
-
-<section>
-    <div class="legacy-container">
-        <div class="legacy-text">
-            <h2>The Owner-Operator Edge</h2>
-            <p>At The Beltzer Company, we don't just apply coatings; we understand the substrate. With a deep background in sawmilling and woodworking, we bring an unparalleled understanding of how wood, humidity, and finish interact. When you hire us, you aren't getting a revolving door of subcontractors—you're getting two decades of hands-on mastery.</p>
-        </div>
-        <div class="legacy-years">
-            <span class="year-number">20</span>
-            <span class="year-label">Years in the Trades</span>
-        </div>
-    </div>
-
-    <div class="about-grid">
-        <div class="about-content">
-            <h3>Meet the Maker</h3>
-            <p>My name is Nick Beltzer, and I founded this company on a simple principle: high-end finishing requires more than just a brush—it requires a tradesman's eye for detail. </p>
-            <p>With 20 years of experience across painting, woodworking, and sawmilling, I operate as an owner-operator to ensure that every project bearing my name meets a standard of excellence that typical crews simply can't match.</p>
-        </div>
-        <div class="about-content" style="background: rgba(176, 141, 87, 0.05); padding: 40px; border-radius: 2px;">
-            <h4 style="text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-top: 0;">The Standard</h4>
-            <ul style="list-style: none; padding: 0; line-height: 2.2; font-size: 0.95rem;">
-                <li>• Direct Communication with the Owner</li>
-                <li>• Expertise in Wood & Timber Substrates</li>
-                <li>• Commercial-Grade Architectural Coatings</li>
-                <li>• Clean, Professional, & Efficient Job Sites</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="process-grid">
-        <div>
-            <span class="step-num">01.</span>
-            <h4 style="text-transform: uppercase; letter-spacing: 1px; font-weight: 400;">Sourcing & Prep</h4>
-            <p style="font-size: 0.9rem; line-height: 1.6;">The finish is only as good as the foundation. We prioritize rigorous preparation for every surface.</p>
-        </div>
-        <div>
-            <span class="step-num">02.</span>
-            <h4 style="text-transform: uppercase; letter-spacing: 1px; font-weight: 400;">Precision Application</h4>
-            <p style="font-size: 0.9rem; line-height: 1.6;">Using professional equipment and architectural-standard coatings for a lifetime seal.</p>
-        </div>
-        <div>
-            <span class="step-num">03.</span>
-            <h4 style="text-transform: uppercase; letter-spacing: 1px; font-weight: 400;">The Master's Finish</h4>
-            <p style="font-size: 0.9rem; line-height: 1.6;">Final inspection and detailing that meets the rigorous standards of Nebraska's finest custom builds.</p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <h2>Recent Portfolio</h2>
-    <div class="gallery">
-        <img src="Images/20240805_175157.jpg" alt="Interior Finish">
-        <img src="Images/20240805_194448.jpg" alt="Stain Matching">
-        <img src="Images/20240805_194504.jpg" alt="T&G Ceiling Detail">
-        <img src="Images/20240807_112146.jpg" alt="High-End Repaint">
-        <img src="Images/20240910_175457.jpg" alt="Commercial Standard">
-        <img src="Images/20240910_190813.jpg" alt="Exterior Wood Finish">
-    </div>
-
-    <div class="final-cta">
-        <h3>Ready to start your project?</h3>
-        <p>Expert finishing for those who value the details.</p>
-        <div class="cta-group" style="padding: 0;">
-            <a href="mailto:Njbeltzer@gmail.com" class="btn btn-dark">Email for Quote</a>
-            <a href="sms:+14022157756" class="btn btn-outline">Text for Fast Response</a>
-        </div>
-        <a href="#top" class="back-to-top">↑ Back to Top</a>
-    </div>
-</section>
-
-<div class="service-area">
-    <h2>Project Locations</h2>
-    <div class="location-grid">
-        <div class="location-col">
-            <h4>Sarpy County</h4>
-            <p>Gretna (HQ)<br>Papillion<br>La Vista<br>Springfield</p>
-        </div>
-        <div class="location-col">
-            <h4>Omaha Metro</h4>
-            <p>Elkhorn<br>Bennington<br>Bellevue<br>West Omaha</p>
-        </div>
-        <div class="location-col">
-            <h4>Regional</h4>
-            <p>Lincoln<br>Ashland<br>Waverly<br>Fremont</p>
-        </div>
-    </div>
-</div>
-
-<footer>
-    <div class="footer-logo">THE BELTZER COMPANY</div>
-    <div class="footer-sub">Fine Finishing & Architectural Coatings | Established 2005</div>
-    
-    <div class="footer-contact">
-        Gretna, Nebraska &nbsp; | &nbsp; 402.215.7756 &nbsp; | &nbsp; Njbeltzer@gmail.com
-    </div>
-
-    <div class="footer-copy">
-        &copy; 2026 THE BELTZER COMPANY. ALL RIGHTS RESERVED. <br>
-        Owner-Operated Excellence for Two Decades.
-    </div>
-</footer>
-
-</body>
-</html>
+            h1 { font-size: 2.2
