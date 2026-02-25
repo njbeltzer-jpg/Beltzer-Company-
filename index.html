@@ -53,11 +53,28 @@
         h2 { font-weight: 400; font-size: 2.2rem; text-align: center; margin-bottom: 50px; position: relative; letter-spacing: 2px; }
         h2::after { content: ''; display: block; width: 60px; height: 1px; background: var(--gold); margin: 25px auto; }
 
-        /* Form Styling */
-        .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #eee; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 8px; color: var(--primary); }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; font-family: inherit; box-sizing: border-box; }
+        /* Form Overlay Styling */
+        #bid-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 40px;
+            border: 1px solid var(--gold);
+            width: 90%;
+            max-width: 500px;
+        }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; font-family: inherit; }
 
         .legacy-container { background: white; border: 1px solid #eee; padding: 60px; display: flex; align-items: center; gap: 50px; margin-bottom: 50px; }
         .legacy-text { flex: 2; }
@@ -104,8 +121,30 @@
 </header>
 
 <div class="cta-group">
-    <a href="#bid-form" class="btn btn-dark">Inquire for Bid</a>
+    <button onclick="document.getElementById('bid-modal').style.display='block'" class="btn btn-dark">Inquire for Bid</button>
     <a href="sms:+14022157756" class="btn btn-outline">Text Nick Directly</a>
+</div>
+
+<div id="bid-modal">
+    <div class="modal-content">
+        <h2 style="font-size: 1.5rem;">Submit Bid Inquiry</h2>
+        <form action="https://formspree.io/f/xykdlnnd" method="POST">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>Project Details</label>
+                <textarea name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark" style="width:100%">Send Request</button>
+            <button type="button" onclick="document.getElementById('bid-modal').style.display='none'" style="margin-top:10px; background:none; border:none; color:gray; cursor:pointer; width:100%; text-transform:uppercase; font-size:0.7rem; letter-spacing:1px;">Cancel</button>
+        </form>
+    </div>
 </div>
 
 <section>
@@ -118,27 +157,6 @@
             <span class="year-number">20</span>
             <span class="year-label">Years in the Trades</span>
         </div>
-    </div>
-</section>
-
-<section id="bid-form">
-    <h2>Request a Bid</h2>
-    <div class="form-container">
-        <form action="https://formspree.io/f/xykdlnnd" method="POST">
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text" name="name" required>
-            </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label>Project Details</label>
-                <textarea name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-dark" style="width: 100%;">Submit Inquiry</button>
-        </form>
     </div>
 </section>
 
