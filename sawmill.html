@@ -3,153 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Beltzer Company | Custom Sawmilling & Kiln Drying</title>
+    <title>The Beltzer Company | Custom Sawmilling</title>
     <style>
-        :root { --primary: #1a252f; --gold: #b08d57; --text: #2c3e50; --bg: #fdfdfd; }
-        
-        body { 
-            font-family: 'Garamond', 'Georgia', serif; 
-            color: var(--text); 
-            margin: 0; 
-            background-color: var(--bg);
-            background-image: url('https://www.transparenttextures.com/patterns/white-wall.png');
+        body {
+            font-family: 'EB Garamond', Garamond, serif;
+            color: #d1d1d1;
+            margin: 0;
+            background-color: #0b141d;
+            background-attachment: fixed;
             scroll-behavior: smooth;
         }
 
-        header { 
-            text-align: center; 
-            padding: 100px 20px; 
-            background: rgba(255,255,255,0.95);
-            border-bottom: 1px solid #eee;
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(11, 20, 29, 0.9);
+            border-bottom: 1px solid #444;
         }
 
-        h1 { font-weight: 400; font-size: 3rem; letter-spacing: 6px; margin: 0; color: var(--primary); text-transform: uppercase; }
-        .tagline { font-style: italic; font-size: 1.1rem; color: var(--gold); margin-top: 10px; letter-spacing: 2px; }
+        header h1 {
+            font-size: 3.5rem;
+            letter-spacing: 5px;
+            color: #fff;
+            margin: 0;
+        }
 
-        .cta-group { display: flex; justify-content: center; gap: 20px; padding: 40px; flex-wrap: wrap; }
-        .btn { 
-            padding: 15px 40px; 
-            text-decoration: none; 
-            text-transform: uppercase; 
-            font-size: 0.8rem; 
-            letter-spacing: 2px; 
-            transition: 0.4s;
-            border: 1px solid var(--primary);
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .service-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+        }
+
+        /* Sawmill Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #333;
+            transition: transform 0.4s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.02);
+            border-color: #555;
+        }
+
+        /* Modal / Form */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            background-color: #15202b;
+            margin: 10% auto;
+            padding: 40px;
+            border: 1px solid #444;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: #0b141d;
+            border: 1px solid #333;
+            color: #fff;
+            font-family: inherit;
+        }
+
+        .submit-btn {
+            background: #fff;
+            color: #0b141d;
+            padding: 12px 20px;
+            border: none;
+            width: 100%;
             cursor: pointer;
-            display: inline-block;
+            font-weight: bold;
+            text-transform: uppercase;
         }
-        .btn-dark { background: var(--primary); color: white; }
-        .btn-outline { color: var(--primary); }
-        .btn:hover { background: var(--gold); color: white; border-color: var(--gold); }
 
-        section { max-width: 1100px; margin: 80px auto; padding: 0 20px; }
-        h2 { font-weight: 400; font-size: 2.2rem; text-align: center; margin-bottom: 40px; position: relative; letter-spacing: 2px; }
-        h2::after { content: ''; display: block; width: 60px; height: 1px; background: var(--gold); margin: 25px auto; }
-
-        /* Portfolio Gallery */
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 15px; }
-        .gallery img { width: 100%; height: 450px; object-fit: cover; transition: 0.7s; cursor: pointer; border-radius: 2px; display: none; }
-        .gallery img:hover { transform: scale(1.03); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .load-more-container { text-align: center; margin-top: 40px; }
-
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px; }
-        .service-card { background: white; padding: 40px; border: 1px solid #eee; text-align: center; }
-        .service-card h3 { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 1.2rem; margin-bottom: 20px; }
-        .service-card p { line-height: 1.8; font-size: 1rem; color: #555; }
-
-        .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #eee; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 8px; color: var(--primary); }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; font-family: inherit; box-sizing: border-box; }
-
-        footer { text-align: center; padding: 80px 20px; background: var(--primary); color: #fff; }
-        .footer-logo { font-size: 1.2rem; letter-spacing: 4px; margin-bottom: 10px; }
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid #222;
+            font-size: 0.8rem;
+            color: #555;
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>The Sawmill Division</h1>
-    <p class="tagline">CUSTOM MILLING | KILN DRYING | ARCHITECTURAL LUMBER</p>
-</header>
-
-<div class="cta-group">
-    <a href="index.html" class="btn btn-outline">Back to Painting</a>
-    <a href="#milling-form" class="btn btn-dark">Request Milling Quote</a>
-</div>
-
-<section id="portfolio">
-    <h2>Milling & Slab Gallery</h2>
-    <div class="gallery" id="project-gallery">
-        <img src="Images/20260209_133809.jpg" alt="Custom Milled Slab">
-        <img src="Images/20260209_171816.jpg" alt="Milling Process">
-        <img src="Images/20260209_132744.jpg" alt="Wood Character Detail">
-        <img src="Images/20260208_145247.jpg" alt="Finished Lumber">
-        <img src="Images/20260208_144046.jpg" alt="Sawmill Operation">
-        <img src="Images/20260207_142414.jpg" alt="Stacking and Drying">
-    </div>
-    <div class="load-more-container">
-        <button id="loadMoreBtn" class="btn btn-outline">View More Milling Projects</button>
-    </div>
-</section>
-
-<section>
-    <h2>Services</h2>
-    <div class="service-grid">
-        <div class="service-card">
-            <h3>Custom Milling</h3>
-            <p>Precise dimensional lumber and live-edge slabs milled to your exact specifications. We work with Walnut, Oak, Maple, and other local hardwoods.</p>
+    <header>
+        <h1>BELTZER SAWMILL</h1>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#work">Painting</a>
+            <a href="javascript:void(0)" onclick="openModal()">Inquire About Lumber</a>
         </div>
-        <div class="service-card">
-            <h3>Kiln Drying</h3>
-            <p>Our controlled drying process ensures your lumber is stabilized and ready for interior use.</p>
+    </header>
+
+    <div class="container">
+        <div class="service-intro">
+            <h2 style="letter-spacing: 3px; color: #fff;">CUSTOM MILLING & URBAN SALVAGE</h2>
+            <p>From log to lumber. We specialize in custom milling local hardwoods, providing unique slabs and dimensional lumber for your next project.</p>
         </div>
-        <div class="service-card">
-            <h3>Architectural Slabs</h3>
-            <p>Unique, book-matched slabs and character pieces for mantels, countertops, and statement furniture.</p>
+
+        <div class="gallery">
+            <img src="Images/20231201_101522.jpg" alt="Sawmill Work 1">
+            <img src="Images/20231205_142010.jpg" alt="Sawmill Work 2">
+            <img src="Images/20240110_093045.jpg" alt="Sawmill Work 3">
+            <img src="Images/20240115_114512.jpg" alt="Sawmill Work 4">
+            <img src="Images/20240210_152233.jpg" alt="Sawmill Work 5">
+            <img src="Images/20240218_131005.jpg" alt="Sawmill Work 6">
         </div>
     </div>
-</section>
 
-<section id="milling-form">
-    <h2>Milling Inquiry</h2>
-    <div class="form-container">
-        <form action="https://formspree.io/f/xykdlnnd" method="POST">
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text" name="name" required>
-            </div>
-            <div class="form-group">
-                <label>Species / Project Specs</label>
-                <input type="text" name="species" placeholder="e.g. Walnut, 8/4 thickness, etc.">
-            </div>
-            <div class="form-group">
-                <label>Details</label>
-                <textarea name="message" rows="5" required placeholder="Describe your milling or drying needs..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-dark" style="width: 100%;">Submit Milling Request</button>
-        </form>
+    <div id="bidModal" class="modal">
+        <div class="modal-content">
+            <span style="color:#fff; float:right; cursor:pointer;" onclick="closeModal()">&times;</span>
+            <h2 style="color:#fff; margin-top:0;">Lumber Inquiry</h2>
+            <form action="https://formspree.io/f/xykdlnnd" method="POST">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="_replyto" placeholder="Email" required>
+                <textarea name="message" placeholder="What are you looking for? (Species, dimensions, etc.)" rows="4" required></textarea>
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+            </form>
+        </div>
     </div>
-</section>
 
-<footer>
-    <div class="footer-logo">THE BELTZER COMPANY</div>
-    <div class="footer-sub" style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: #888;">Gretna, Nebraska | Est. 2005</div>
-</footer>
+    <footer>
+        <p>&copy; 2026 THE BELTZER COMPANY | GRETNA, NE</p>
+        <p>402-215-7756</p>
+    </footer>
 
-<script>
-    const galleryImages = document.querySelectorAll('.gallery img');
-    const loadMoreBtn = document.getElementById('loadMoreBtn');
-    let currentCount = 6;
-    function showImages() {
-        for (let i = 0; i < currentCount && i < galleryImages.length; i++) {
-            galleryImages[i].style.display = 'block';
+    <script>
+        function openModal() {
+            document.getElementById("bidModal").style.display = "block";
         }
-        if (currentCount >= galleryImages.length) { loadMoreBtn.style.display = 'none'; }
-    }
-    loadMoreBtn.addEventListener('click', () => { currentCount += 6; showImages(); });
-    showImages();
-</script>
+        function closeModal() {
+            document.getElementById("bidModal").style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("bidModal")) {
+                closeModal();
+            }
+        }
+    </script>
 
 </body>
 </html>
