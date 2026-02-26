@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Beltzer Company | Custom Sawmilling & Kiln Drying</title>
+    
+    <link rel="icon" type="image/png" href="Images/favicon.png">
+    <link rel="apple-touch-icon" href="Images/favicon.png">
+
     <style>
         :root { --primary: #1a252f; --gold: #b08d57; --text: #2c3e50; --bg: #fdfdfd; }
         
@@ -46,7 +50,6 @@
         h2 { font-weight: 400; font-size: 2.2rem; text-align: center; margin-bottom: 40px; position: relative; letter-spacing: 2px; }
         h2::after { content: ''; display: block; width: 60px; height: 1px; background: var(--gold); margin: 25px auto; }
 
-        /* Portfolio Gallery */
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 15px; }
         .gallery img { width: 100%; height: 450px; object-fit: cover; transition: 0.7s; cursor: pointer; border-radius: 2px; display: none; }
         .gallery img:hover { transform: scale(1.03); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
@@ -56,14 +59,6 @@
         .service-card { background: white; padding: 40px; border: 1px solid #eee; text-align: center; }
         .service-card h3 { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 1.2rem; margin-bottom: 20px; }
         .service-card p { line-height: 1.8; font-size: 1rem; color: #555; }
-
-        /* Pricing Table Styling */
-        .pricing-table-container { overflow-x: auto; margin-top: 20px; background: white; border: 1px solid #eee; }
-        table { width: 100%; border-collapse: collapse; }
-        thead tr { background: var(--primary); color: white; text-align: left; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
-        th { padding: 15px; border-bottom: 2px solid var(--gold); }
-        td { padding: 15px; border-bottom: 1px solid #eee; font-size: 0.95rem; color: #555; }
-        .species-name { font-weight: bold; color: var(--primary); }
 
         .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #eee; }
         .form-group { margin-bottom: 20px; }
@@ -117,44 +112,6 @@
             <p>Unique, book-matched slabs and character pieces for mantels, countertops, and statement furniture.</p>
         </div>
     </div>
-</section>
-
-<section id="pricing">
-    <h2>Common Species & Base Pricing</h2>
-    <div class="pricing-table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Species</th>
-                    <th>Common Uses</th>
-                    <th>Milling Rate</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="species-name">Black Walnut</td>
-                    <td>Live-edge slabs, high-end furniture</td>
-                    <td>Inquire for BF Rate</td>
-                </tr>
-                <tr>
-                    <td class="species-name">White Oak</td>
-                    <td>Table tops, flooring, architectural beams</td>
-                    <td>Inquire for BF Rate</td>
-                </tr>
-                <tr>
-                    <td class="species-name">Hard Maple</td>
-                    <td>Countertops, cutting boards, trim</td>
-                    <td>Inquire for BF Rate</td>
-                </tr>
-                <tr>
-                    <td class="species-name">Aromatic Cedar</td>
-                    <td>Closet lining, outdoor furniture, mantels</td>
-                    <td>Inquire for BF Rate</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <p style="text-align: center; font-size: 0.8rem; color: #888; margin-top: 15px; font-style: italic;">*Pricing varies based on thickness (4/4, 8/4, etc.) and current log inventory.</p>
 </section>
 
 <section id="milling-form">
