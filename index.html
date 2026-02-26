@@ -3,80 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Beltzer Company | Fine Finishing</title>
+    <title>The Beltzer Company | Fine Finishing & Commercial Painting</title>
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nbeltzer.github.io/">
+    <meta property="og:title" content="The Beltzer Company | Fine Finishing & Woodworking">
+    <meta property="og:description" content="20 years of mastery in painting and woodworking. Serving Omaha, Gretna, and Sarpy County.">
+    <meta property="og:image" content="https://nbeltzer.github.io/Images/20240910_175504.jpg">
+
     <style>
-        body {
-            font-family: 'EB Garamond', Garamond, serif;
-            color: #d1d1d1;
-            margin: 0;
-            background-color: #0b141d;
-            background-attachment: fixed;
+        :root { --primary: #1a252f; --gold: #b08d57; --text: #2c3e50; --bg: #fdfdfd; }
+        
+        body { 
+            font-family: 'Garamond', 'Georgia', serif; 
+            color: var(--text); 
+            margin: 0; 
+            background-color: var(--bg);
+            background-image: url('https://www.transparenttextures.com/patterns/white-wall.png');
             scroll-behavior: smooth;
         }
 
-        header {
-            text-align: center;
-            padding: 50px 20px;
-            background: rgba(11, 20, 29, 0.9);
-            border-bottom: 1px solid #444;
+        header { 
+            text-align: center; 
+            padding: 120px 20px; 
+            background: rgba(255,255,255,0.95);
+            border-bottom: 1px solid #eee;
         }
 
-        header h1 {
-            font-size: 3.5rem;
-            letter-spacing: 5px;
-            color: #fff;
-            margin: 0;
-        }
+        h1 { font-weight: 400; font-size: 3.5rem; letter-spacing: 6px; margin: 0; color: var(--primary); }
+        .tagline { font-style: italic; font-size: 1.1rem; color: var(--gold); margin-top: 10px; letter-spacing: 2px; }
 
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .nav-links a {
-            color: #aaa;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #fff;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 15px;
-            margin-top: 40px;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 4px;
-            border: 1px solid #333;
+        .cta-group { display: flex; justify-content: center; gap: 20px; padding: 40px; flex-wrap: wrap; }
+        .btn { 
+            padding: 15px 40px; 
+            text-decoration: none; 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+            letter-spacing: 2px; 
             transition: 0.4s;
+            border: 1px solid var(--primary);
             cursor: pointer;
+            display: inline-block;
         }
+        .btn-dark { background: var(--primary); color: white; }
+        .btn-outline { color: var(--primary); }
+        .btn-gold { border-color: var(--gold); color: var(--gold); }
+        .btn:hover { background: var(--gold); color: white; border-color: var(--gold); }
 
-        .gallery img:hover {
-            transform: scale(1.02);
-            border-color: #555;
-        }
+        section { max-width: 1100px; margin: 100px auto; padding: 0 20px; }
+        h2 { font-weight: 400; font-size: 2.2rem; text-align: center; margin-bottom: 50px; position: relative; letter-spacing: 2px; }
+        h2::after { content: ''; display: block; width: 60px; height: 1px; background: var(--gold); margin: 25px auto; }
 
-        .modal {
+        /* Form Overlay Styling */
+        #bid-modal {
             display: none;
             position: fixed;
             z-index: 1000;
@@ -84,102 +63,195 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.9);
+            background-color: rgba(0,0,0,0.8);
         }
-
         .modal-content {
-            background-color: #15202b;
+            background-color: white;
             margin: 10% auto;
             padding: 40px;
-            border: 1px solid #444;
+            border: 1px solid var(--gold);
             width: 90%;
             max-width: 500px;
-            border-radius: 8px;
         }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; font-family: inherit; }
 
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            background: #0b141d;
-            border: 1px solid #333;
-            color: #fff;
-            font-family: inherit;
-        }
+        .legacy-container { background: white; border: 1px solid #eee; padding: 60px; display: flex; align-items: center; gap: 50px; margin-bottom: 50px; }
+        .legacy-text { flex: 2; }
+        .legacy-text h2 { text-align: left; margin-top: 0; }
+        .legacy-text h2::after { margin: 25px 0; }
+        .legacy-years { flex: 1; text-align: center; border-left: 1px solid var(--gold); padding-left: 20px; }
+        .year-number { font-size: 5rem; color: var(--gold); display: block; line-height: 1; }
+        .year-label { text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: var(--primary); }
 
-        .submit-btn {
-            background: #fff;
-            color: #0b141d;
-            padding: 12px 20px;
-            border: none;
-            width: 100%;
-            cursor: pointer;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 15px; }
+        .gallery img { width: 100%; height: 450px; object-fit: cover; transition: 0.7s; cursor: pointer; border-radius: 2px; display: none; }
+        .gallery img:hover { transform: scale(1.03); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .load-more-container { text-align: center; margin-top: 40px; }
 
-        footer {
-            text-align: center;
-            padding: 60px 20px;
-            border-top: 1px solid #222;
-            font-size: 0.8rem;
-            color: #555;
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .testimonial-card { background: white; padding: 35px; border: 1px solid #eee; display: flex; flex-direction: column; justify-content: space-between; }
+        .testimonial-text { font-style: italic; line-height: 1.7; color: #444; margin-bottom: 20px; font-size: 0.95rem; }
+        .testimonial-author { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); font-weight: bold; border-top: 1px solid #f5f5f5; padding-top: 15px; }
+
+        .service-area { background: rgba(26, 37, 47, 0.03); padding: 80px 20px; text-align: center; border-top: 1px solid #eee; }
+        .location-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; margin-top: 30px; }
+        .location-col h4 { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 15px; }
+        .location-col p { font-size: 0.9rem; line-height: 1.8; color: #555; }
+
+        footer { text-align: center; padding: 100px 20px; background: var(--primary); color: #fff; }
+        .footer-logo { font-size: 1.5rem; letter-spacing: 4px; margin-bottom: 10px; }
+        .footer-sub { color: #888; letter-spacing: 2px; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 30px; }
+        .footer-copy { color: #555; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; border-top: 1px solid #2c3e50; padding-top: 40px; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .legacy-container { flex-direction: column; padding: 30px; text-align: center; }
+            .legacy-text h2 { text-align: center; }
+            .legacy-text h2::after { margin: 25px auto; }
+            .legacy-years { border-left: none; border-top: 1px solid var(--gold); padding-top: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>THE BELTZER COMPANY</h1>
-        <div class="nav-links">
-            <a href="#work">Work</a>
-            <a href="sawmill.html">The Sawmill</a>
-            <a href="javascript:void(0)" onclick="openModal()">Request Bid</a>
-        </div>
-    </header>
+<header>
+    <h1>THE BELTZER COMPANY</h1>
+    <p class="tagline">ARCHITECTURAL COATINGS & FINE FINISHING | EST. 2005</p>
+</header>
 
-    <div class="container" id="work">
-        <div class="gallery">
-            <img src="Images/20230816_150938.jpg" alt="Work 1">
-            <img src="Images/20231121_121122.jpg" alt="Work 2">
-            <img src="Images/20230816_132248.jpg" alt="Work 3">
-            <img src="Images/20240411_162235.jpg" alt="Work 4">
-            <img src="Images/20240412_090401.jpg" alt="Work 5">
-            <img src="Images/20240412_091040.jpg" alt="Work 6">
+<div class="cta-group">
+    <button onclick="document.getElementById('bid-modal').style.display='block'" class="btn btn-dark">Inquire for Bid</button>
+    
+    <a href="sawmill.html" class="btn btn-outline btn-gold">The Sawmill</a>
+    
+    <a href="sms:+14022157756" class="btn btn-outline">Text Nick Directly</a>
+</div>
+
+<div id="bid-modal">
+    <div class="modal-content">
+        <h2 style="font-size: 1.5rem;">Submit Bid Inquiry</h2>
+        <form action="https://formspree.io/f/xykdlnnd" method="POST">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>Project Details</label>
+                <textarea name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark" style="width:100%">Send Request</button>
+            <button type="button" onclick="document.getElementById('bid-modal').style.display='none'" style="margin-top:10px; background:none; border:none; color:gray; cursor:pointer; width:100%; text-transform:uppercase; font-size:0.7rem; letter-spacing:1px;">Cancel</button>
+        </form>
+    </div>
+</div>
+
+<section>
+    <div class="legacy-container">
+        <div class="legacy-text">
+            <h2>The Owner-Operator Edge</h2>
+            <p>At The Beltzer Company, we don't just apply coatings; we understand the substrate. With a deep background in sawmilling and woodworking, we bring an unparalleled understanding of how wood, humidity, and finish interact. When you hire us, you aren't getting a revolving door of subcontractors—you're getting two decades of hands-on mastery.</p>
+        </div>
+        <div class="legacy-years">
+            <span class="year-number">20</span>
+            <span class="year-label">Years in the Trades</span>
         </div>
     </div>
+</section>
 
-    <div id="bidModal" class="modal">
-        <div class="modal-content">
-            <span style="color:#fff; float:right; cursor:pointer;" onclick="closeModal()">&times;</span>
-            <h2 style="color:#fff; margin-top:0;">Request a Bid</h2>
-            <form action="https://formspree.io/f/xykdlnnd" method="POST">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="_replyto" placeholder="Email" required>
-                <textarea name="message" placeholder="Project Details" rows="4" required></textarea>
-                <button type="submit" class="submit-btn">Send Request</button>
-            </form>
+<section id="portfolio">
+    <h2>Recent Portfolio</h2>
+    <div class="gallery" id="project-gallery">
+        <img src="Images/20230816_150938.jpg" alt="Fine Finishing Project">
+        <img src="Images/20230818_143133.jpg" alt="Architectural Coating">
+        <img src="Images/20230824_123241.jpg" alt="Precision Trim Work">
+        <img src="Images/20230825_095325.jpg" alt="Cabinet Refinishing">
+        <img src="Images/20230830_172908.jpg" alt="Residential Interior">
+        <img src="Images/20230906_141525.jpg" alt="Custom Woodwork">
+        <img src="Images/20231002_113904.jpg" alt="Commercial Standard">
+        <img src="Images/20231004_122526.jpg" alt="Exterior Restoration">
+        <img src="Images/20240416_092708.jpg" alt="Luxury Millwork">
+        <img src="Images/20240805_175157.jpg" alt="New Build Finishing">
+        <img src="Images/20240807_112146.jpg" alt="Stain and Varnish Detail">
+        <img src="Images/20240910_175504.jpg" alt="High-End Finish">
+    </div>
+    <div class="load-more-container">
+        <button id="loadMoreBtn" class="btn btn-outline">View More Projects</button>
+    </div>
+</section>
+
+<section id="reviews">
+    <h2>Client Perspectives</h2>
+    <div class="testimonial-grid">
+        <div class="testimonial-card">
+            <p class="testimonial-text">"Nick did an amazing job on our cabinets, trim and walls. He was patient, kind and professional. He never flinched to get it done... all with a smile!"</p>
+            <p class="testimonial-author">— Kassie B.</p>
+        </div>
+        <div class="testimonial-card">
+            <p class="testimonial-text">"Had Nick do some interior painting and my garage. His work was outstanding! Nice straight lines and lots of attention to detail."</p>
+            <p class="testimonial-author">— Al H.</p>
+        </div>
+        <div class="testimonial-card">
+            <p class="testimonial-text">"Very professional. The preparation beforehand made the painting process go smoothly. We were updated daily."</p>
+            <p class="testimonial-author">— Toni C.</p>
+        </div>
+        <div class="testimonial-card">
+            <p class="testimonial-text">"Such a great experience working with Nick. He was absolutely professional, prompt and very communicative."</p>
+            <p class="testimonial-author">— Emily L.</p>
+        </div>
+        <div class="testimonial-card">
+            <p class="testimonial-text">"Nick painted the trim throughout our house and did an excellent job. He was very professional and respectful of our home."</p>
+            <p class="testimonial-author">— Linda H.</p>
+        </div>
+        <div class="testimonial-card">
+            <p class="testimonial-text">"We're very happy with Nick's communication and work! We'd definitely recommend him and would hire if needed in the future!"</p>
+            <p class="testimonial-author">— Kim G.</p>
         </div>
     </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026 THE BELTZER COMPANY | GRETNA, NE</p>
-        <p>402-215-7756</p>
-    </footer>
+<div class="service-area">
+    <h2>Project Locations</h2>
+    <div class="location-grid">
+        <div class="location-col">
+            <h4>Sarpy County</h4>
+            <p>Gretna (HQ)<br>Papillion<br>La Vista</p>
+        </div>
+        <div class="location-col">
+            <h4>Omaha Metro</h4>
+            <p>Elkhorn<br>Bennington<br>West Omaha</p>
+        </div>
+        <div class="location-col">
+            <h4>Regional</h4>
+            <p>Lincoln<br>Ashland<br>Fremont</p>
+        </div>
+    </div>
+</div>
 
-    <script>
-        function openModal() {
-            document.getElementById("bidModal").style.display = "block";
+<footer>
+    <div class="footer-logo">THE BELTZER COMPANY</div>
+    <div class="footer-sub">Fine Finishing & Architectural Coatings | Established 2005</div>
+    <div class="footer-copy">&copy; 2026 THE BELTZER COMPANY. ALL RIGHTS RESERVED.</div>
+</footer>
+
+<script>
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    let currentCount = 6;
+    function showImages() {
+        for (let i = 0; i < currentCount && i < galleryImages.length; i++) {
+            galleryImages[i].style.display = 'block';
         }
-        function closeModal() {
-            document.getElementById("bidModal").style.display = "none";
-        }
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("bidModal")) {
-                closeModal();
-            }
-        }
-    </script>
+        if (currentCount >= galleryImages.length) { loadMoreBtn.style.display = 'none'; }
+    }
+    loadMoreBtn.addEventListener('click', () => { currentCount += 6; showImages(); });
+    showImages();
+</script>
 
 </body>
 </html>
