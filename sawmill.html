@@ -50,6 +50,27 @@
         h2 { font-weight: 400; font-size: 2.2rem; text-align: center; margin-bottom: 40px; position: relative; letter-spacing: 2px; }
         h2::after { content: ''; display: block; width: 60px; height: 1px; background: var(--gold); margin: 25px auto; }
 
+        /* Species Visual Guide */
+        .species-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-bottom: 60px; }
+        .species-card { background: white; border: 1px solid #eee; padding: 20px; text-align: center; transition: 0.3s; }
+        .species-card:hover { border-color: var(--gold); }
+        .species-img { width: 100%; height: 180px; background: #eee; margin-bottom: 15px; object-fit: cover; border-radius: 2px; }
+        .species-card h3 { text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin: 10px 0; color: var(--primary); }
+        .status-badge { font-size: 0.65rem; text-transform: uppercase; padding: 4px 10px; border-radius: 15px; letter-spacing: 1px; font-weight: bold; }
+        .status-ready { background: #e8f5e9; color: #2e7d32; }
+        .status-drying { background: #fff3e0; color: #ef6c00; }
+
+        /* Thickness Visualizer */
+        .thickness-container { display: flex; justify-content: space-around; align-items: flex-end; gap: 20px; background: white; padding: 40px; border: 1px solid #eee; flex-wrap: wrap; text-align: center; }
+        .thickness-item { flex: 1; min-width: 120px; }
+        .wood-block { background: #dcd0bc; border: 1px solid #c4b59d; margin: 0 auto 15px auto; width: 100px; position: relative; box-shadow: inset 0 0 10px rgba(0,0,0,0.05); }
+        .t-4-4 { height: 15px; }
+        .t-5-4 { height: 22px; }
+        .t-8-4 { height: 40px; }
+        .t-12-4 { height: 65px; }
+        .thickness-label { font-weight: bold; font-size: 1.2rem; display: block; color: var(--primary); }
+        .thickness-use { font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 15px; }
         .gallery img { width: 100%; height: 450px; object-fit: cover; transition: 0.7s; cursor: pointer; border-radius: 2px; display: none; }
         .gallery img:hover { transform: scale(1.03); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
@@ -67,6 +88,11 @@
 
         footer { text-align: center; padding: 80px 20px; background: var(--primary); color: #fff; }
         .footer-logo { font-size: 1.2rem; letter-spacing: 4px; margin-bottom: 10px; }
+
+        @media (max-width: 768px) {
+            .thickness-container { gap: 30px; }
+            .wood-block { width: 80px; }
+        }
     </style>
 </head>
 <body>
@@ -80,6 +106,62 @@
     <a href="index.html" class="btn btn-outline">Back to Painting</a>
     <a href="#milling-form" class="btn btn-dark">Request Milling Quote</a>
 </div>
+
+<section id="species">
+    <h2>Available Wood Species</h2>
+    <div class="species-grid">
+        <div class="species-card">
+            <div class="species-img" style="background: #3d2b1f;"></div> 
+            <h3>Black Walnut</h3>
+            <span class="status-badge status-ready">Kiln Ready</span>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Deep chocolate tones. Harvested from local Nebraska timber.</p>
+        </div>
+        <div class="species-card">
+            <div class="species-img" style="background: #d2b48c;"></div>
+            <h3>White Oak</h3>
+            <span class="status-badge status-ready">Kiln Ready</span>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Unmatched durability. Rift and Quarter-sawn options available.</p>
+        </div>
+        <div class="species-card">
+            <div class="species-img" style="background: #f5deb3;"></div>
+            <h3>Hard Maple</h3>
+            <span class="status-badge status-drying">Air Drying</span>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Clean, bright aesthetics. Estimated ready date: Summer 2026.</p>
+        </div>
+        <div class="species-card">
+            <div class="species-img" style="background: #bc8f8f;"></div>
+            <h3>Aromatic Cedar</h3>
+            <span class="status-badge status-ready">In Stock</span>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Stunning natural character. Ideal for chests and outdoor accents.</p>
+        </div>
+    </div>
+</section>
+
+<section id="thickness-guide">
+    <h2>Milling Thicknesses</h2>
+    <div class="thickness-container">
+        <div class="thickness-item">
+            <div class="wood-block t-4-4"></div>
+            <span class="thickness-label">4/4</span>
+            <span class="thickness-use">Cabinetry & Trim</span>
+        </div>
+        <div class="thickness-item">
+            <div class="wood-block t-5-4"></div>
+            <span class="thickness-label">5/4</span>
+            <span class="thickness-use">Stair Treads</span>
+        </div>
+        <div class="thickness-item">
+            <div class="wood-block t-8-4"></div>
+            <span class="thickness-label">8/4</span>
+            <span class="thickness-use">Dining Tables</span>
+        </div>
+        <div class="thickness-item">
+            <div class="wood-block t-12-4"></div>
+            <span class="thickness-label">12/4</span>
+            <span class="thickness-use">Fireplace Mantels</span>
+        </div>
+    </div>
+</section>
 
 <section id="portfolio">
     <h2>Milling & Slab Gallery</h2>
