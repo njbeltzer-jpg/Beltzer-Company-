@@ -57,6 +57,14 @@
         .service-card h3 { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 1.2rem; margin-bottom: 20px; }
         .service-card p { line-height: 1.8; font-size: 1rem; color: #555; }
 
+        /* Pricing Table Styling */
+        .pricing-table-container { overflow-x: auto; margin-top: 20px; background: white; border: 1px solid #eee; }
+        table { width: 100%; border-collapse: collapse; }
+        thead tr { background: var(--primary); color: white; text-align: left; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
+        th { padding: 15px; border-bottom: 2px solid var(--gold); }
+        td { padding: 15px; border-bottom: 1px solid #eee; font-size: 0.95rem; color: #555; }
+        .species-name { font-weight: bold; color: var(--primary); }
+
         .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #eee; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 8px; color: var(--primary); }
@@ -109,6 +117,44 @@
             <p>Unique, book-matched slabs and character pieces for mantels, countertops, and statement furniture.</p>
         </div>
     </div>
+</section>
+
+<section id="pricing">
+    <h2>Common Species & Base Pricing</h2>
+    <div class="pricing-table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Species</th>
+                    <th>Common Uses</th>
+                    <th>Milling Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="species-name">Black Walnut</td>
+                    <td>Live-edge slabs, high-end furniture</td>
+                    <td>Inquire for BF Rate</td>
+                </tr>
+                <tr>
+                    <td class="species-name">White Oak</td>
+                    <td>Table tops, flooring, architectural beams</td>
+                    <td>Inquire for BF Rate</td>
+                </tr>
+                <tr>
+                    <td class="species-name">Hard Maple</td>
+                    <td>Countertops, cutting boards, trim</td>
+                    <td>Inquire for BF Rate</td>
+                </tr>
+                <tr>
+                    <td class="species-name">Aromatic Cedar</td>
+                    <td>Closet lining, outdoor furniture, mantels</td>
+                    <td>Inquire for BF Rate</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p style="text-align: center; font-size: 0.8rem; color: #888; margin-top: 15px; font-style: italic;">*Pricing varies based on thickness (4/4, 8/4, etc.) and current log inventory.</p>
 </section>
 
 <section id="milling-form">
