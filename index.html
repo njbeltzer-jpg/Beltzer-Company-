@@ -95,6 +95,11 @@
         .testimonial-text { font-style: italic; line-height: 1.7; color: #444; margin-bottom: 20px; font-size: 0.95rem; }
         .testimonial-author { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); font-weight: bold; border-top: 1px solid #f5f5f5; padding-top: 15px; }
 
+        /* Maintenance Guide Styling */
+        .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .guide-item h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 15px; }
+        .guide-item p { font-size: 0.9rem; line-height: 1.6; color: #555; }
+
         .service-area { background: rgba(26, 37, 47, 0.03); padding: 80px 20px; text-align: center; border-top: 1px solid #eee; }
         .location-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; margin-top: 30px; }
         .location-col h4 { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 15px; }
@@ -123,9 +128,7 @@
 
 <div class="cta-group">
     <button onclick="document.getElementById('bid-modal').style.display='block'" class="btn btn-dark">Inquire for Bid</button>
-    
     <a href="sawmill.html" class="btn btn-outline btn-gold">The Sawmill</a>
-    
     <a href="sms:+14022157756" class="btn btn-outline">Text Nick Directly</a>
 </div>
 
@@ -211,6 +214,24 @@
         <div class="testimonial-card">
             <p class="testimonial-text">"We're very happy with Nick's communication and work! We'd definitely recommend him and would hire if needed in the future!"</p>
             <p class="testimonial-author">— Kim G.</p>
+        </div>
+    </div>
+</section>
+
+<section id="maintenance">
+    <h2>Surface Care Guide</h2>
+    <div class="guide-grid">
+        <div class="guide-item">
+            <h3>The Curing Period</h3>
+            <p>Fresh paint may feel dry to the touch, but architectural coatings take up to 30 days to fully cure. Avoid heavy cleaning or placing items against new surfaces during this timeframe.</p>
+        </div>
+        <div class="guide-item">
+            <h3>Cleaning Best Practices</h3>
+            <p>Use a soft microfiber cloth and a mild soap-and-water solution. Avoid abrasive chemicals, sponges, or high-pressure sprayers which can burnish the finish and alter its sheen.</p>
+        </div>
+        <div class="guide-item">
+            <h3>Humidity Control</h3>
+            <p>Wood is a living substrate. Maintaining a consistent indoor humidity level (between 35-50%) prevents the wood from expanding and contracting, which protects the integrity of the finish.</p>
         </div>
     </div>
 </section>
