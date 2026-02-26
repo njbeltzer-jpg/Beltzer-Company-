@@ -54,21 +54,20 @@
             padding: 40px 20px;
         }
 
-        /* Portfolio Gallery */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
             margin-top: 40px;
         }
 
         .gallery img {
             width: 100%;
-            height: 350px;
+            height: 400px;
             object-fit: cover;
             border-radius: 4px;
             border: 1px solid #333;
-            transition: transform 0.4s;
+            transition: 0.4s;
             cursor: pointer;
         }
 
@@ -77,34 +76,6 @@
             border-color: #555;
         }
 
-        /* Testimonials */
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .testimonial-card {
-            background: #15202b;
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid #222;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: #fff;
-            margin-bottom: 15px;
-        }
-
-        .testimonial-author {
-            color: #888;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-        }
-
-        /* Modal / Form */
         .modal {
             display: none;
             position: fixed;
@@ -162,8 +133,7 @@
         <h1>THE BELTZER COMPANY</h1>
         <div class="nav-links">
             <a href="#work">Work</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="sawmill.html">Sawmill</a>
+            <a href="sawmill.html">The Sawmill</a>
             <a href="javascript:void(0)" onclick="openModal()">Request Bid</a>
         </div>
     </header>
@@ -176,24 +146,6 @@
             <img src="Images/20240411_162235.jpg" alt="Work 4">
             <img src="Images/20240412_090401.jpg" alt="Work 5">
             <img src="Images/20240412_091040.jpg" alt="Work 6">
-        </div>
-
-        <div id="testimonials">
-            <h2 style="text-align: center; margin-top: 80px; letter-spacing: 3px;">TESTIMONIALS</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Excellent craftsmanship and attention to detail. Our kitchen looks brand new."</p>
-                    <p class="testimonial-author">— Michael S.</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"The only person I trust with high-end finishing. Professional and reliable."</p>
-                    <p class="testimonial-author">— David L.</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Phenomenal work on our custom trim. The finish is like glass."</p>
-                    <p class="testimonial-author">— Sarah W.</p>
-                </div>
-            </div>
         </div>
     </div>
 
