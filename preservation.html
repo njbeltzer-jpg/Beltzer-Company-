@@ -29,7 +29,6 @@
             border-bottom: 1px solid #eee;
         }
 
-        /* Fixed: Responsive title sizing for mobile fit */
         h1 { font-weight: 400; font-size: clamp(1.6rem, 8vw, 2.5rem); letter-spacing: 6px; margin: 0; color: var(--primary); text-transform: uppercase; line-height: 1.2; }
         .tagline { font-style: italic; font-size: 1.1rem; color: var(--gold); margin-top: 10px; letter-spacing: 2px; }
 
@@ -62,13 +61,14 @@
         .math-label { text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; color: var(--primary); }
 
         .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .tier-card { background: white; padding: 40px; border: 1px solid #eee; text-align: center; transition: 0.3s; }
+        .tier-card { background: white; padding: 40px; border: 1px solid #eee; text-align: center; transition: 0.3s; display: flex; flex-direction: column; }
         .tier-card:hover { border-color: var(--gold); transform: translateY(-5px); }
         .tier-card h3 { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 1.4rem; margin-bottom: 10px; }
         .tier-price { font-size: 2rem; color: var(--primary); margin-bottom: 20px; display: block; }
         .tier-price span { font-size: 0.9rem; color: #888; }
-        .tier-card ul { list-style: none; padding: 0; margin: 20px 0 30px; text-align: left; }
-        .tier-card li { padding: 10px 0; border-bottom: 1px solid #f5f5f5; font-size: 0.95rem; color: #555; }
+        .tier-card ul { list-style: none; padding: 0; margin: 20px 0 30px; text-align: left; flex-grow: 1; }
+        .tier-card li { padding: 10px 0; border-bottom: 1px solid #f5f5f5; font-size: 0.9rem; color: #555; }
+        .tier-card li strong { color: var(--gold); }
         .tier-card li:last-child { border-bottom: none; }
 
         .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #eee; }
@@ -122,22 +122,22 @@
             <h3>The Essential</h3>
             <span class="tier-price">$300 <span>/ Year</span></span>
             <ul>
-                <li>3 Visits Per Year (2 Hours Each)</li>
+                <li>3 Maintenance Visits (2 Hours Each)</li>
                 <li>Wall Scuff & Mark Removal</li>
                 <li>Minor Drywall Patching</li>
-                <li>High-Traffic Area Touch-ups</li>
-                <li>Priority Scheduling</li>
+                <li><strong>The Color Vault:</strong> Digital archive of all home finishes</li>
+                <li><strong>Wellness Reports:</strong> Post-visit surface health summary</li>
             </ul>
         </div>
-        <div class="tier-card">
+        <div class="tier-card" style="border-color: var(--gold); transform: scale(1.05);">
             <h3>The Architectural</h3>
             <span class="tier-price">$500 <span>/ Year</span></span>
             <ul>
                 <li>Includes All Essential Services</li>
                 <li>Trim & Baseboard Refinishing</li>
                 <li>Door Casing Maintenance</li>
-                <li><strong>One Free Accent Wall Per Year</strong></li>
-                <li>Annual Color Consultation</li>
+                <li><strong>Holiday Priority:</strong> Guaranteed pre-holiday touch-ups</li>
+                <li><strong>Free Accent Wall:</strong> One color change per year</li>
             </ul>
         </div>
         <div class="tier-card">
@@ -146,8 +146,8 @@
             <ul>
                 <li>Includes All Architectural Services</li>
                 <li>Full Ceiling & Crown Molding Care</li>
-                <li>Door Hardware Inspection</li>
-                <li><strong>Free Interior Color Changes</strong></li>
+                <li><strong>Vanity Millwork:</strong> Custom Black Walnut mantel/shelf perk</li>
+                <li><strong>Unlimited Color Changes:</strong> Complete interior flexibility</li>
                 <li>Direct Owner-Operator Hotline</li>
             </ul>
         </div>
