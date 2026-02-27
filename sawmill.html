@@ -196,9 +196,7 @@
 <section id="milling-form">
     <h2>Milling Inquiry</h2>
     <div class="form-container">
-        <form action="https://formspree.io/f/xykdlnnd" method="POST">
-            <input type="hidden" name="_next" value="https://beltzer-jpg.github.io/thankyou.html">
-            
+        <form id="sawmill-form" action="https://formspree.io/f/xykdlnnd" method="POST">
             <div class="form-group">
                 <label>Name</label>
                 <input type="text" name="name" required>
@@ -242,6 +240,25 @@
     }
     loadMoreBtn.addEventListener('click', () => { currentCount += 6; showImages(); });
     showImages();
+
+    // AJAX Form Submission for Sawmill Page
+    const form = document.getElementById("sawmill-form");
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          window.location.href = "thankyou.html";
+        } else {
+          alert("Oops! There was a problem submitting your form");
+        }
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
 </script>
 
 </body>
