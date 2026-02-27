@@ -7,7 +7,6 @@
     
     <link rel="icon" type="image/png" href="Images/favicon.png">
     <link rel="apple-touch-icon" href="Images/favicon.png">
-
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 
     <style>
@@ -22,133 +21,102 @@
             scroll-behavior: smooth;
         }
 
-        header { 
-            text-align: center; 
-            padding: 100px 20px; 
-            background: rgba(255,255,255,0.95);
-            border-bottom: 1px solid #eee;
-        }
-
+        header { text-align: center; padding: 100px 20px; background: rgba(255,255,255,0.95); border-bottom: 1px solid #eee; }
         h1 { font-weight: 400; font-size: clamp(1.6rem, 8vw, 2.5rem); letter-spacing: 6px; margin: 0; color: var(--primary); text-transform: uppercase; line-height: 1.2; }
         .tagline { font-style: italic; font-size: 1.1rem; color: var(--gold); margin-top: 10px; letter-spacing: 2px; }
 
         .cta-group { display: flex; justify-content: center; gap: 20px; padding: 40px; flex-wrap: wrap; }
-        .btn { 
-            padding: 15px 40px; 
-            text-decoration: none; 
-            text-transform: uppercase; 
-            font-size: 0.8rem; 
-            letter-spacing: 2px; 
-            transition: 0.4s;
-            border: 1px solid var(--primary);
-            cursor: pointer;
-            display: inline-block;
-        }
+        .btn { padding: 15px 40px; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; transition: 0.4s; border: 1px solid var(--primary); cursor: pointer; display: inline-block; }
         .btn-dark { background: var(--primary); color: white; }
         .btn-outline { color: var(--primary); }
         .btn:hover { background: var(--gold); color: white; border-color: var(--gold); }
 
         section { max-width: 1100px; margin: 80px auto; padding: 0 20px; }
-        h2 { font-weight: 400; font-size: 2.2rem; text-align: center; margin-bottom: 40px; position: relative; letter-spacing: 2px; }
-        h2::after { content: ''; display: block; width: 60px; height: 1px; background: var(--gold); margin: 25px auto; }
+        
+        /* Audience Selector Styling */
+        .selector-container { text-align: center; margin-bottom: 50px; }
+        .selector-btn { background: none; border: 1px solid #ddd; padding: 10px 30px; font-family: inherit; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
+        .selector-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
-        .math-container { background: white; border: 1px solid #eee; padding: 60px; display: flex; align-items: center; gap: 50px; margin-bottom: 50px; }
-        .math-text { flex: 2; }
-        .math-text h2 { text-align: left; margin-top: 0; }
-        .math-text h2::after { margin: 25px 0; }
-        .math-visual { flex: 1; text-align: center; border-left: 1px solid var(--gold); padding-left: 20px; }
-        .math-number { font-size: 3rem; color: var(--gold); display: block; line-height: 1.2; }
-        .math-label { text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; color: var(--primary); }
-
-        .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .tier-card { background: white; padding: 40px; border: 1px solid #eee; text-align: center; transition: 0.3s; display: flex; flex-direction: column; }
-        .tier-card:hover { border-color: var(--gold); transform: translateY(-5px); }
-        .tier-card h3 { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 1.4rem; margin-bottom: 10px; }
+        .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .tier-card { background: white; padding: 40px; border: 1px solid #eee; text-align: center; display: flex; flex-direction: column; transition: 0.3s; }
+        .tier-card:hover { border-color: var(--gold); }
+        .tier-card h3 { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
         .tier-price { font-size: 2rem; color: var(--primary); margin-bottom: 20px; display: block; }
-        .tier-price span { font-size: 0.9rem; color: #888; }
-        .tier-card ul { list-style: none; padding: 0; margin: 20px 0 30px; text-align: left; flex-grow: 1; }
-        .tier-card li { padding: 10px 0; border-bottom: 1px solid #f5f5f5; font-size: 0.9rem; color: #555; }
-        .tier-card li strong { color: var(--gold); }
-        .tier-card li:last-child { border-bottom: none; }
+        .tier-card ul { list-style: none; padding: 0; text-align: left; flex-grow: 1; }
+        .tier-card li { padding: 10px 0; border-bottom: 1px solid #f5f5f5; font-size: 0.9rem; }
 
         .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #eee; }
         .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 8px; color: var(--primary); }
+        .form-group label { display: block; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 8px; }
         .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; font-family: inherit; box-sizing: border-box; }
 
         footer { text-align: center; padding: 80px 20px; background: var(--primary); color: #fff; }
         .footer-logo { font-size: 1.2rem; letter-spacing: 4px; margin-bottom: 10px; }
-        .footer-sub { color: #888; letter-spacing: 2px; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 15px; }
-        .footer-hours { color: var(--gold); letter-spacing: 1px; font-size: 0.7rem; text-transform: uppercase; }
-
-        @media (max-width: 768px) {
-            .math-container { flex-direction: column; padding: 30px; text-align: center; }
-            .math-text h2 { text-align: center; }
-            .math-text h2::after { margin: 25px auto; }
-            .math-visual { border-left: none; border-top: 1px solid var(--gold); padding-top: 20px; }
-        }
+        
+        .hidden { display: none; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>The Preservation Program</h1>
-    <p class="tagline">LIFETIME SURFACE CARE | THE BELTZER COMPANY</p>
+    <p class="tagline">LIFETIME SURFACE STEWARDSHIP | THE BELTZER COMPANY</p>
 </header>
 
 <div class="cta-group">
     <a href="index.html" class="btn btn-outline">Back Home</a>
-    <a href="sawmill.html" class="btn btn-outline">The Sawmill</a>
-    <a href="#enroll" class="btn btn-dark">Enroll My Home</a>
+    <a href="#enroll" class="btn btn-dark">Enroll Today</a>
 </div>
 
-<section>
-    <div class="math-container">
-        <div class="math-text">
-            <h2>The Mathematics of Maintenance</h2>
-            <p>A standard high-end repaint in Sarpy County costs roughly $5,000 and lasts 5–7 years. If you wait until the damage is visible, you're paying for failure. Our Preservation Program flips the script: for the cost of a few pizzas a month, we visit your property 3x a year to ensure your home never needs a $5,000 repaint again. We don't just fix wear; we prevent it.</p>
-        </div>
-        <div class="math-visual">
-            <span class="math-number">$25</span>
-            <span class="math-label">Starting Per Month</span>
-        </div>
+<section id="program-selector">
+    <div class="selector-container">
+        <button id="res-btn" class="selector-btn active" onclick="showTiers('residential')">Homeowner</button>
+        <button id="com-btn" class="selector-btn" onclick="showTiers('commercial')">Small Business</button>
     </div>
-</section>
 
-<section id="tiers">
-    <h2>Program Tiers</h2>
-    <div class="tier-grid">
+    <div id="residential-tiers" class="tier-grid">
         <div class="tier-card">
             <h3>The Essential</h3>
             <span class="tier-price">$300 <span>/ Year</span></span>
             <ul>
                 <li>3 Maintenance Visits (2 Hours Each)</li>
                 <li>Wall Scuff & Mark Removal</li>
-                <li>Minor Drywall Patching</li>
-                <li><strong>The Color Vault:</strong> Digital archive of all home finishes</li>
-                <li><strong>Wellness Reports:</strong> Post-visit surface health summary</li>
+                <li>The Color Vault: Digital Archive</li>
+                <li>Substrate Integrity Audits</li>
             </ul>
         </div>
-        <div class="tier-card" style="border-color: var(--gold); transform: scale(1.05);">
-            <h3>The Architectural</h3>
-            <span class="tier-price">$500 <span>/ Year</span></span>
-            <ul>
-                <li>Includes All Essential Services</li>
-                <li>Trim & Baseboard Refinishing</li>
-                <li>Door Casing Maintenance</li>
-                <li><strong>Holiday Priority:</strong> Guaranteed pre-holiday touch-ups</li>
-                <li><strong>Free Accent Wall:</strong> One color change per year</li>
-            </ul>
-        </div>
-        <div class="tier-card">
+        <div class="tier-card" style="border-color: var(--gold);">
             <h3>The Master</h3>
             <span class="tier-price">$850 <span>/ Year</span></span>
             <ul>
-                <li>Includes All Architectural Services</li>
-                <li>Full Ceiling & Crown Molding Care</li>
-                <li><strong>Vanity Millwork:</strong> Custom Black Walnut mantel/shelf perk</li>
-                <li><strong>Unlimited Color Changes:</strong> Complete interior flexibility</li>
-                <li>Direct Owner-Operator Hotline</li>
+                <li>Includes All Maintenance Services</li>
+                <li>Vanity Millwork: Annual Custom Shelf Perk</li>
+                <li>Unlimited Color Changes</li>
+                <li>Finish-Match Guarantee</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="commercial-tiers" class="tier-grid hidden">
+        <div class="tier-card">
+            <h3>Brand Integrity</h3>
+            <span class="tier-price">$600 <span>/ Year</span></span>
+            <ul>
+                <li>Bi-Monthly High-Traffic Walkthroughs</li>
+                <li>Scuff-X Performance Coating Touch-ups</li>
+                <li>Entryway & Reception Area Care</li>
+                <li><strong>Tax-Deductible</strong> Maintenance Records</li>
+            </ul>
+        </div>
+        <div class="tier-card" style="border-color: var(--gold);">
+            <h3>Executive Suite</h3>
+            <span class="tier-price">$1,200 <span>/ Year</span></span>
+            <ul>
+                <li>Monthly "Zero-Disruption" Visits</li>
+                <li>After-Hours Scheduling (No Client Impact)</li>
+                <li>Founder’s Bundle: 50% Off Home Enrollment</li>
+                <li>Rapid Response: 48hr Emergency Scuff Fix</li>
             </ul>
         </div>
     </div>
@@ -159,21 +127,19 @@
     <div class="form-container">
         <form id="preservation-form" action="https://formspree.io/f/xykdlnnd" method="POST">
             <div class="form-group">
-                <label>Name</label>
+                <label>Name / Business Name</label>
                 <input type="text" name="name" required>
             </div>
             <div class="form-group">
-                <label>Interested Tier</label>
-                <select name="tier" required>
-                    <option value="" disabled selected>Select a Tier</option>
-                    <option value="Essential">The Essential</option>
-                    <option value="Architectural">The Architectural</option>
-                    <option value="Master">The Master</option>
+                <label>Program Type</label>
+                <select name="type" required>
+                    <option value="Residential">Residential</option>
+                    <option value="Commercial">Small Business</option>
                 </select>
             </div>
             <div class="form-group">
-                <label>About Your Home</label>
-                <textarea name="message" rows="5" placeholder="Approximate age of current paint and any specific areas of concern..." required></textarea>
+                <label>Message</label>
+                <textarea name="message" rows="4" placeholder="Specific areas of concern or high-traffic zones..." required></textarea>
             </div>
             <button type="submit" class="btn btn-dark" style="width: 100%;">Apply for Enrollment</button>
         </form>
@@ -182,11 +148,17 @@
 
 <footer>
     <div class="footer-logo">THE BELTZER COMPANY</div>
-    <div class="footer-sub">Gretna, Nebraska | Established 2005</div>
-    <div class="footer-hours">M-F: 7am - 5pm | Sat/Sun: By Appointment Only</div>
+    <p>Gretna, Nebraska | Established 2005</p>
 </footer>
 
 <script>
+    function showTiers(type) {
+        document.getElementById('residential-tiers').classList.toggle('hidden', type !== 'residential');
+        document.getElementById('commercial-tiers').classList.toggle('hidden', type !== 'commercial');
+        document.getElementById('res-btn').classList.toggle('active', type === 'residential');
+        document.getElementById('com-btn').classList.toggle('active', type === 'commercial');
+    }
+
     const form = document.getElementById("preservation-form");
     async function handleSubmit(event) {
       event.preventDefault();
