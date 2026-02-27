@@ -29,7 +29,8 @@
             border-bottom: 1px solid #eee;
         }
 
-        h1 { font-weight: 400; font-size: 3rem; letter-spacing: 6px; margin: 0; color: var(--primary); text-transform: uppercase; }
+        /* Fixed: Responsive title sizing for mobile fit */
+        h1 { font-weight: 400; font-size: clamp(1.8rem, 8vw, 3rem); letter-spacing: 6px; margin: 0; color: var(--primary); text-transform: uppercase; line-height: 1.2; }
         .tagline { font-style: italic; font-size: 1.1rem; color: var(--gold); margin-top: 10px; letter-spacing: 2px; }
 
         .cta-group { display: flex; justify-content: center; gap: 20px; padding: 40px; flex-wrap: wrap; }
@@ -52,14 +53,12 @@
         h2 { font-weight: 400; font-size: 2.2rem; text-align: center; margin-bottom: 40px; position: relative; letter-spacing: 2px; }
         h2::after { content: ''; display: block; width: 60px; height: 1px; background: var(--gold); margin: 25px auto; }
 
-        /* Species List Styling */
         .species-list-container { max-width: 800px; margin: 0 auto 60px auto; background: white; border: 1px solid #eee; padding: 40px; }
         .spec-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px dotted #ddd; }
         .spec-row:last-child { border-bottom: none; }
         .spec-name { text-transform: uppercase; letter-spacing: 2px; font-weight: bold; color: var(--primary); }
         .status-badge { font-size: 0.65rem; text-transform: uppercase; padding: 4px 12px; border-radius: 15px; letter-spacing: 1px; font-weight: bold; background: #f5f5f5; color: #888; border: 1px solid #ddd; }
 
-        /* Thickness Visualizer */
         .thickness-container { display: flex; justify-content: space-around; align-items: flex-end; gap: 20px; background: white; padding: 40px; border: 1px solid #eee; flex-wrap: wrap; text-align: center; }
         .thickness-item { flex: 1; min-width: 120px; }
         .wood-block { background: #dcd0bc; border: 1px solid #c4b59d; margin: 0 auto 15px auto; width: 100px; position: relative; box-shadow: inset 0 0 10px rgba(0,0,0,0.05); }
@@ -70,7 +69,6 @@
         .thickness-label { font-weight: bold; font-size: 1.2rem; display: block; color: var(--primary); }
         .thickness-use { font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Small Batch Section Styling */
         .featured-slab-container { background: white; border: 1px solid #eee; padding: 20px; text-align: center; }
         .slab-img { width: 100%; max-height: 600px; object-fit: cover; border-radius: 2px; }
         .slab-info { padding: 30px; }
