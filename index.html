@@ -10,12 +10,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://beltzer-jpg.github.io/">
-    <meta property="og:title" content="The Beltzer Company | Fine Finishing & Woodworking">
-    <meta property="og:description" content="20 years of mastery in painting and woodworking. Serving Omaha, Gretna, and Sarpy County.">
-    <meta property="og:image" content="https://beltzer-jpg.github.io/Images/20240910_175504.jpg">
-
     <style>
         :root { --primary: #1a252f; --gold: #b08d57; --text: #2c3e50; --bg: #fdfdfd; }
         
@@ -35,7 +29,8 @@
             border-bottom: 1px solid #eee;
         }
 
-        h1 { font-weight: 400; font-size: 3.5rem; letter-spacing: 6px; margin: 0; color: var(--primary); }
+        /* Fixed: Responsive title sizing for mobile fit */
+        h1 { font-weight: 400; font-size: clamp(2rem, 8vw, 3.5rem); letter-spacing: 6px; margin: 0; color: var(--primary); text-transform: uppercase; line-height: 1.2; }
         .tagline { font-style: italic; font-size: 1.1rem; color: var(--gold); margin-top: 10px; letter-spacing: 2px; }
 
         .cta-group { display: flex; justify-content: center; gap: 20px; padding: 40px; flex-wrap: wrap; }
@@ -123,7 +118,6 @@
         .footer-copy { color: #555; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; border-top: 1px solid #2c3e50; padding-top: 40px; }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
             .legacy-container { flex-direction: column; padding: 30px; text-align: center; }
             .legacy-text h2 { text-align: center; }
             .legacy-text h2::after { margin: 25px auto; }
@@ -306,7 +300,6 @@
     loadMoreBtn.addEventListener('click', () => { currentCount += 6; showImages(); });
     showImages();
 
-    // AJAX Form Submission to bypass Formspree Locked Redirects
     const form = document.getElementById("bid-form");
     async function handleSubmit(event) {
       event.preventDefault();
