@@ -68,6 +68,13 @@
         .thickness-label { font-weight: bold; font-size: 1.2rem; display: block; color: var(--primary); }
         .thickness-use { font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
 
+        /* Small Batch Section Styling */
+        .featured-slab-container { background: white; border: 1px solid #eee; padding: 20px; text-align: center; }
+        .slab-img { width: 100%; max-height: 600px; object-fit: cover; border-radius: 2px; }
+        .slab-info { padding: 30px; }
+        .slab-info h3 { text-transform: uppercase; letter-spacing: 3px; color: var(--primary); margin-bottom: 10px; }
+        .slab-info p { font-style: italic; color: #666; max-width: 700px; margin: 0 auto 20px; line-height: 1.6; }
+
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 15px; }
         .gallery img { width: 100%; height: 450px; object-fit: cover; transition: 0.7s; cursor: pointer; border-radius: 2px; display: none; }
         .gallery img:hover { transform: scale(1.03); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
@@ -103,6 +110,18 @@
     <a href="index.html" class="btn btn-outline">Back to Painting</a>
     <a href="#milling-form" class="btn btn-dark">Request Milling Quote</a>
 </div>
+
+<section id="small-batch">
+    <h2>Small Batch & Live Edge Specials</h2>
+    <div class="featured-slab-container">
+        <img src="Images/9305.jpg" alt="Featured Live Edge Slabs" class="slab-img">
+        <div class="slab-info">
+            <h3>Featured Live Edge Slabs</h3>
+            <p>Select cuts from our recent milling runs. These pieces feature exceptional character and natural edges, ready for custom furniture projects in the Omaha metro area.</p>
+            <a href="#milling-form" class="btn btn-outline btn-gold">Inquire About These Pieces</a>
+        </div>
+    </div>
+</section>
 
 <section id="species">
     <h2>Inventory Status</h2>
