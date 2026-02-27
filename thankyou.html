@@ -8,11 +8,13 @@
     <link rel="icon" type="image/png" href="Images/favicon.png">
     <link rel="apple-touch-icon" href="Images/favicon.png">
 
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
     <style>
         :root { --primary: #1a252f; --gold: #b08d57; --text: #2c3e50; --bg: #fdfdfd; }
         
         body { 
-            font-family: 'Garamond', 'Georgia', serif; 
+            font-family: 'EB Garamond', 'Garamond', 'Georgia', serif; 
             color: var(--text); 
             margin: 0; 
             background-color: var(--bg);
@@ -24,73 +26,49 @@
             text-align: center;
         }
 
-        .thank-you-card {
-            background: white;
-            padding: 60px 40px;
+        .container { 
+            max-width: 600px; 
+            padding: 60px; 
+            background: rgba(255,255,255,0.95); 
             border: 1px solid #eee;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            max-width: 600px;
-            width: 90%;
         }
 
-        .icon-circle {
-            width: 80px;
-            height: 80px;
-            border: 1px solid var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 30px;
-            color: var(--gold);
-            font-size: 2rem;
-        }
-
-        h1 { font-weight: 400; font-size: 2.5rem; letter-spacing: 4px; margin: 0; color: var(--primary); text-transform: uppercase; }
-        .message { font-style: italic; font-size: 1.1rem; color: #666; margin: 20px 0 40px; line-height: 1.6; }
-
-        .nav-options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
+        h1 { font-weight: 400; font-size: 2.5rem; letter-spacing: 4px; color: var(--primary); text-transform: uppercase; margin-bottom: 20px; }
+        p { line-height: 1.8; font-size: 1.1rem; color: #555; margin-bottom: 40px; }
+        
+        .divider { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 40px auto; }
 
         .btn { 
-            padding: 15px 20px; 
+            padding: 15px 40px; 
             text-decoration: none; 
             text-transform: uppercase; 
-            font-size: 0.75rem; 
+            font-size: 0.8rem; 
             letter-spacing: 2px; 
             transition: 0.4s;
             border: 1px solid var(--primary);
-            display: block;
+            cursor: pointer;
+            display: inline-block;
         }
         .btn-dark { background: var(--primary); color: white; }
-        .btn-outline { color: var(--primary); }
-        .btn-gold { border-color: var(--gold); color: var(--gold); }
-        
         .btn:hover { background: var(--gold); color: white; border-color: var(--gold); }
 
-        .full-width { grid-column: span 2; }
-
-        footer { margin-top: 50px; font-size: 0.7rem; letter-spacing: 2px; color: #aaa; text-transform: uppercase; }
+        .contact-direct { margin-top: 40px; font-size: 0.8rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+        .contact-direct a { color: var(--gold); text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<div class="thank-you-card">
-    <div class="icon-circle">✓</div>
-    <h1>Request Received</h1>
-    <p class="message">Thank you for reaching out to The Beltzer Company. Nick will review your project details and get back to you shortly.</p>
+<div class="container">
+    <h1>Message Received</h1>
+    <div class="divider"></div>
+    <p>Thank you for reaching out to The Beltzer Company. As an owner-operator, I personally review every inquiry. You can expect a response regarding your project shortly.</p>
     
-    <div class="nav-options">
-        <a href="index.html" class="btn btn-dark full-width">Return to Home</a>
-        <a href="sawmill.html" class="btn btn-outline">Sawmill Division</a>
-        <a href="index.html#portfolio" class="btn btn-outline">View Gallery</a>
-        <a href="sms:+14022157756" class="btn btn-gold full-width">Urgent? Text Nick Directly</a>
-    </div>
+    <a href="index.html" class="btn btn-dark">Return to Home</a>
 
-    <footer>The Beltzer Company | Est. 2005</footer>
+    <div class="contact-direct">
+        Urgent Inquiry? <a href="sms:+14022157756">Text Nick Directly</a>
+    </div>
 </div>
 
 </body>
